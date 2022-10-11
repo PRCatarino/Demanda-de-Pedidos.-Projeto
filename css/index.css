@@ -1,0 +1,66 @@
+@import url(reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@500&family=Roboto&display=swap');
+
+h1,h2,h3,h4,p{
+  font-family: 'Barlow';
+}
+.fullpagine{
+  display: flex;
+  border-bottom: #FAFAFA solid 0.5px;
+}
+
+/* Pate Lateral esquerda*/
+.Logoleft {
+  flex-direction: column;
+  display: flex;
+  height: 100%;
+  background-color: #FFFFFF;
+}
+.mascaraLogo {
+  margin-bottom: 65vh;
+  display: flex;
+}
+.mascaraLogo img{
+  width: 228px;
+  height: auto;
+  margin: 64px 64px auto 64px;
+}
+
+.specification {
+  margin-left: 10%;
+  margin-bottom: 10%;
+ display: flex;
+ row-gap: 8px;
+ align-items: baseline;
+ flex-direction: column;
+}
+p {
+  font-family: 'Barlow';
+  font-weight: 500;
+}
+
+/* Footer*/
+.finallyline {
+  font-family: 'Barlow';
+  color: grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+}
+.finallyline {
+  width: 100vw;
+  height: 5%;
+}
+
+/*Parte Direita*/
+.Pedidos {
+  width: 100vw;
+  background-color:#FAFAFA;
+}
+.Pedidos h1 {
+  margin: 10px;
+  font-weight: 600;
+  font-size: 50px;
+}
+.check {display: flex;}
