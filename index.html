@@ -23,12 +23,32 @@
       <section class="Pedidos">
         <div class="TopTitle"><h1>Novo Pedido</h1></div>
         <div class="titles"><h4>Tipo de consumo</h4></div>
-        <div>
-          <input type="checkbox" class="check" />
+        <div class="mascarainput">
+          <input type="radio" name="TipoConsumo" class="check" />
           <p>Delivery</p>
-          <input type="checkbox" class="check" />
+
+          <input type="radio" name="TipoConsumo" class="check distanciaCheck" />
           <p>Salão</p>
         </div>
+        <div>
+          <p>Buscar produto</p>
+          <input type="text" name="CodigoProduto" />
+          <input type="button" value="buscar" />
+        </div>
+        <div>
+          <input type="number" /> <input type="text" /> <input type="number" />
+        </div>
+        <div>
+          <input type="button" value="Adicionar produto" />
+        </div>
+        <table>
+          <tr>
+            <th>Código</th>
+            <th>Produto</th>
+            <th>Quantidade</th>
+            <th>Valor</th>
+          </tr>
+        </table>
       </section>
     </main>
     <footer>

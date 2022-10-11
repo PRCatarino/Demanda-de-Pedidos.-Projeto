@@ -35,6 +35,7 @@ h1,h2,h3,h4,p{
  flex-direction: column;
 }
 p {
+  color: gray;
   font-family: 'Barlow';
   font-weight: 500;
 }
@@ -63,4 +64,27 @@ p {
   font-weight: 600;
   font-size: 50px;
 }
-.check {display: flex;}
+.check {display: flex;
+}
+.mascarainput {
+  display: flex;
+  gap:5px;
+  margin: 0px 0px 0px 15px;
+}
+.titles {
+  margin: 20px 10px 20px 14px;
+}
+.distanciaCheck {
+  margin-left: 20px;
+}
+table{
+  width: 100%;
+}
+th{
+  background-color: rgb(206, 206, 206);
+  color:black;
+}
+th,td{
+  padding:7px;
+  text-align: start;
+}
