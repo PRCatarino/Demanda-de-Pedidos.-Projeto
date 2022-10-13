@@ -1,5 +1,7 @@
 @import url(reset.css);
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@500&family=Roboto&display=swap');
+@import url(button.css);
+@import url(corvar.css);
 
 h1,h2,h3,h4,p{
   font-family: 'Barlow';
@@ -135,4 +137,3 @@ th,td{
   padding:7px;
   text-align: start;
 }
-
