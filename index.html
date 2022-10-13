@@ -30,15 +30,35 @@
           <input type="radio" name="TipoConsumo" class="check distanciaCheck" />
           <p>Salão</p>
         </div>
-        <div>
+        <div class="search">
           <p>Buscar produto</p>
-          <input type="text" name="CodigoProduto" />
-          <input type="button" value="buscar" />
+          <input
+            type="text"
+            name="CodigoProduto"
+            placeholder="Código do produto"
+            class="searchcod"
+          />
+          <input type="button" value="buscar" class="searchbtn" />
         </div>
-        <div>
-          <input type="number" /> <input type="text" /> <input type="number" />
+        <div class="organization">
+          <div class="widquantity">
+            <p>Quantidade</p>
+            <input type="number" class="quantity" placeholder="0" />
+          </div>
+          <div class="widproductname">
+            <p>Produto</p>
+            <input
+              type="text"
+              class="productname"
+              placeholder="Nome do produto"
+            />
+          </div>
+          <div class="widprice">
+            <p>Preço</p>
+            <input type="number" class="Price" placeholder="R$ 00,00" />
+          </div>
         </div>
-        <div>
+        <div class="addproduct">
           <input type="button" value="Adicionar produto" />
         </div>
         <table>
@@ -49,6 +69,10 @@
             <th>Valor</th>
           </tr>
         </table>
+        <div class="Buttoncancelsave">
+          <input type="button" value="Cancelar" />
+          <input type="button" value="Salvar Pedido" />
+        </div>
       </section>
     </main>
     <footer>
