@@ -33,3 +33,13 @@
     background: url(/assets/svg/up-arrow-svgrepo-com.svg) no-repeat  center right 10px #FFF;
     background-size: 20px;
 }
+
+.input_main{
+    width: 372px;
+    height: 38px;
+    border-radius:8px;
+    padding:2px 5px 2px 16px;
+    border:1px solid black;
+    outline-style: none;
+    font-size: 17px;
+}
