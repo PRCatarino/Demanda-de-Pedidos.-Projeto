@@ -1,0 +1,28 @@
+:root{
+  --cor-principal-black: 0, 0%;
+  --cor-secundaria-orange:29, 100%;
+  --cor-tercearia-blue:256, 100%;
+
+  --cor-principal-black-20: hsl(var(--cor-principal-black), 20%);
+  --cor-principal-black-30: hsl(var(--cor-principal-black), 30%);
+  --cor-principal-black-40: hsl(var(--cor-principal-black), 40%);
+  --cor-principal-black-50: hsl(var(--cor-principal-black), 50%);
+  --cor-principal-black-60: hsl(var(--cor-principal-black), 60%);
+  --cor-principal-black-70: hsl(var(--cor-principal-black), 70%);
+
+
+  --cor-secundaria-orange-36: hsl(var(--cor-secundaria-orange), 36%);
+  --cor-secundaria-orange-46: hsl(var(--cor-secundaria-orange), 46%);
+  --cor-secundaria-orange-56: hsl(var(--cor-secundaria-orange), 56%);
+  --cor-secundaria-orange-66: hsl(var(--cor-secundaria-orange), 66%);
+  --cor-secundaria-orange-76: hsl(var(--cor-secundaria-orange), 76%);
+  --cor-secundaria-orange-96: hsl(var(--cor-secundaria-orange), 96%);
+
+
+  --cor-tercearia-blue-32: hsl(var( --cor-tercearia-blue), 32%);
+  --cor-tercearia-blue-42: hsl(var( --cor-tercearia-blue), 42%);
+  --cor-tercearia-blue-52: hsl(var( --cor-tercearia-blue), 52%);
+  --cor-tercearia-blue-62: hsl(var( --cor-tercearia-blue), 62%);
+  --cor-tercearia-blue-72: hsl(var( --cor-tercearia-blue), 72%);
+  --cor-tercearia-blue-92: hsl(var( --cor-tercearia-blue), 92%);
+}

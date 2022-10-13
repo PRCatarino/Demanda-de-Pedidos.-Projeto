@@ -1,0 +1,139 @@
+@import url(reset.css);
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@500&family=Roboto&display=swap');
+@import url(button.css);
+@import url(corvar.css);
+
+h1,h2,h3,h4,p{
+  font-family: 'Barlow';
+}
+.fullpagine{
+  display: flex;
+  border-bottom: #FAFAFA solid 0.5px;
+}
+
+/* Pate Lateral esquerda*/
+.Logoleft {
+  flex-direction: column;
+  display: flex;
+  height: 100%;
+  background-color: #FFFFFF;
+}
+.mascaraLogo {
+  margin-bottom: 65vh;
+  display: flex;
+}
+.mascaraLogo img{
+  width: 228px;
+  height: auto;
+  margin: 64px 64px auto 64px;
+}
+
+.specification {
+  margin-left: 10%;
+  margin-bottom: 10%;
+ display: flex;
+ row-gap: 8px;
+ align-items: baseline;
+ flex-direction: column;
+}
+p {
+  color: gray;
+  font-family: 'Barlow';
+  font-weight: 500;
+}
+
+/* Footer*/
+.finallyline {
+  font-family: 'Barlow';
+  color: grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+}
+.finallyline {
+  width: 100vw;
+  height: 5%;
+}
+
+/*Parte Direita*/
+.Pedidos {
+  width: 100vw;
+  background-color:#FAFAFA;
+}
+.Pedidos h1 {
+  margin: 10px;
+  font-weight: 600;
+  font-size: 50px;
+}
+.check {display: flex;
+}
+.mascarainput {
+  display: flex;
+  gap:5px;
+  margin: 0px 0px 0px 15px;
+}
+.titles {
+  margin: 20px 10px 20px 14px;
+}
+.distanciaCheck {
+  margin-left: 20px;
+}
+.search{
+  margin: 30px 0px 20px 20px;
+}
+.searchcod {
+  width: 30%;
+  border-radius: 4px;
+  margin-top: 3px;
+  margin-right: 10px;
+  height: 25px;
+  padding: 5px;
+}
+.organization {
+  display: flex;
+  margin-left: 20px;
+  gap: 10px;
+}
+.widproductname{
+  width: 50%;
+}
+.quantity, .productname, .Price {
+margin-top: 3px;
+border-radius: 4px;
+height: 25px;
+padding: 5px;
+}
+.quantity {
+  width: 90%;
+}
+.productname {
+  width: 100%;
+}
+.widprice {
+margin-left: 20px;
+}
+.addproduct {
+  margin-left: 63%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+.Buttoncancelsave {
+  display: flex;
+ gap: 15px;
+ justify-content: end;
+margin-right: 5%;
+}
+/*Organização da tabela*/
+table{
+  width: 95%;
+  margin: 0px 0px 425px 20px;
+}
+th{
+  background-color: rgb(206, 206, 206);
+  color:black;
+}
+th,td{
+  padding:7px;
+  text-align: start;
+}

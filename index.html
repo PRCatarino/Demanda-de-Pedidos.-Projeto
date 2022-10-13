@@ -1,13 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="/assets/css/index.css"/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/Demanda-de-Pedidos.-Projeto/css/index.css" />
     <title>Projeto</title>
-</head>
-<body>
-    
-</body> 
+  </head>
+  <body>
+    <main class="fullpagine">
+      <section class="Logoleft">
+        <div class="mascaraLogo">
+          <img src="/Demanda-de-Pedidos.-Projeto/assets/Group 24.png" alt="" />
+        </div>
+
+        <div class="specification">
+          <p>Operador: Marialucia</p>
+          <p>Data - Hora 12/08/2022 - 15:29</p>
+          <p>Versão: 1.0</p>
+        </div>
+      </section>
+      <section class="Pedidos">
+        <div class="TopTitle"><h1>Novo Pedido</h1></div>
+        <div class="titles"><h4>Tipo de consumo</h4></div>
+        <div class="mascarainput">
+          <input type="radio" name="TipoConsumo" class="check" />
+          <p>Delivery</p>
+
+          <input type="radio" name="TipoConsumo" class="check distanciaCheck" />
+          <p>Salão</p>
+        </div>
+
+        <div class="search">
+          <p>Buscar produto</p>
+          <input
+            type="text"
+            name="CodigoProduto"
+            placeholder="Código do produto"
+            class="searchcod"
+          />
+          <input type="button" value="buscar" class="searchbtn" />
+        </div>
+
+        <div class="organization">
+          <div class="widquantity">
+            <p>Quantidade</p>
+            <input type="number" class="quantity" placeholder="0" />
+          </div>
+          <div class="widproductname">
+            <p>Produto</p>
+            <input
+              type="text"
+              class="productname"
+              placeholder="Nome do produto"
+            />
+          </div>
+          <div class="widprice">
+            <p>Preço</p>
+            <input type="number" class="Price" placeholder="R$ 00,00" />
+          </div>
+        </div>
+        <div class="addproduct">
+          <input type="button" value="Adicionar produto" class="button_main" />
+        </div>
+        <table>
+          <tr>
+            <th>Código</th>
+            <th>Produto</th>
+            <th>Quantidade</th>
+            <th>Valor</th>
+          </tr>
+        </table>
+        <div class="Buttoncancelsave">
+          <input type="button" value="Cancelar" class="button_main" />
+          <input type="button" value="Salvar Pedido" class="button_main" />
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="finallyline">
+        Copyright @ 2022 easYcode - Todos os direitos reservados
+      </div>
+    </footer>
+  </body>
 </html>
