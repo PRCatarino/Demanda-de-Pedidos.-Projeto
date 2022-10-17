@@ -1,0 +1,16 @@
+@import url(index.css);
+
+.neworder {
+margin: 25px 15px 15px 20px;
+}
+.filter {
+  width: 10%;
+}
+.filterbutton {
+  display: flex;
+  margin-top: 5px;
+  gap: 5px;
+}
+.print {
+  margin-left: 60%;
+}
