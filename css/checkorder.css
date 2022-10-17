@@ -1,0 +1,8 @@
+@import url(index.css);
+@import url(neworder.css);
+
+.searchdist {
+  display: flex;
+  gap: 25px;
+  margin-top: 80px;
+}

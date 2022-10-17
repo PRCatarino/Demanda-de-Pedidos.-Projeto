@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/Demanda-de-Pedidos.-Projeto/css/neworder.css" />
+    <link rel="stylesheet" href="/Demanda-de-Pedidos.-Projeto/css/checkorder.css" />
     <title>Projeto</title>
   </head>
   <body>
@@ -24,22 +24,20 @@
           <div class="TopTitle"><h1>Todos os pedidos</h1></div>
           <input type="button" class="button_main neworder" value="Novo pedido">
           
-          <div class="search">
-         <p>Filtra por</p>
-          <div class="filterbutton"><input
-            type="text"
-            name="Tipo"
-            placeholder="Tipo"
-            class="searchcod filter"
+          <div class="search searchdist">
+           <input
+            type="button"
+            name="Editar"
+            value="Editar"
+            class="button_main"
           />
           <input
-            type="text"
-            name="Status"
-            placeholder="Status"
-            class="searchcod filter"
-          /><input type="button" value="Imprimir" class="button_main print" /></div>
+            type="button"
+            name="Excluir"
+            value="Excluir"
+            class="button_main"
+          />
         </div>
-
         <table>
           <tr>
             <th><input type="checkbox">   N° do pedido</th>
