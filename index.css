@@ -1,51 +1,57 @@
-@import url(/css/reset.css);
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@500&family=Roboto&display=swap');
-@import url(/css/button.css);
-@import url(/css/color.css);
-@import url(/css/select.css);
-@import url(/css/input.css);
+@import url(assets/css/button.css);
+@import url(assets/css/reset.css);
+@import url(assets/css/color.css);
+@import url(assets/css/select.css);
+@import url(assets/css/input.css);
 
+*{
+  margin: 0;
+  padding: 0;
+}
 .container{
   max-width: 1200px;
   margin:0 auto;
 }
 
-h1,h2,h3,h4,p{
+h1,h2,h3,h4,p,label{
   font-family: 'Barlow';
 }
-.fullpagine{
+.fullPagine{
   display: flex;
   border-bottom: #FAFAFA solid 0.5px;
 }
 
 /* Pate Lateral esquerda*/
-.Logoleft {
+.soonLeft {
   flex-direction: column;
   display: flex;
+  margin: 0 auto;
   height: 100%;
   background-color: #FFFFFF;
+  padding: 0px 35px 20px 35px;
+  border-radius:4px;
+  box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
+  z-index: 99;
 }
-.mascaraLogo {
+.maskSoon {
   margin-bottom: 65vh;
   display: flex;
 }
-.mascaraLogo img{
+.maskSoon img{
   width: 228px;
-  height: auto;
-  margin: 64px 64px auto 64px;
+  margin: 64px auto;
 }
 
 .specification {
-  margin-left: 10%;
-  margin-bottom: 10%;
  display: flex;
  row-gap: 8px;
  align-items: baseline;
  flex-direction: column;
 }
-p {
+
+.paragraphMain{
   color: gray;
-  font-family: 'Barlow';
   font-weight: 500;
 }
 
@@ -64,68 +70,96 @@ p {
 }
 
 /*Parte Direita*/
-.Pedidos {
-  width: 100vw;
-  background-color:#FAFAFA;
+.requests {
+  background-color: #FAFAFA;
+  padding: 0px 50px;
+  width: 100%;
+  margin-top: 30px;
 }
-.Pedidos h1 {
-  margin: 10px;
+.requests h1 {
   font-weight: 600;
   font-size: 50px;
+  margin-bottom: 20px;
 }
-.check {display: flex;
+.titles{
+  margin-top: 10px;
 }
-.mascarainput {
+.maskInput {
   display: flex;
-  gap:5px;
-  margin: 0px 0px 0px 15px;
+  justify-content: space-between;
+  width: 200px;
 }
-.titles {
-  margin: 20px 10px 20px 14px;
+.typeDelevery{
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
-.distanciaCheck {
-  margin-left: 20px;
+.typeSalao{
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
 .search{
-  margin: 30px 0px 20px 20px;
+  display: flex;
 }
-.searchcod {
-  width: 30%;
+.searchProduct{
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 350px;
+}
+.labelSearch{
+  width: 150px;
+}
+.searchCod {
+  width: 300px;
   border-radius: 4px;
-  margin-top: 3px;
-  margin-right: 10px;
   height: 25px;
-  padding: 5px;
+  padding: 5px; 
+}
+
+.searchBtn{
+  border:1px solid var(--cor-secundaria-orange-36);
+  background-color: #FFF;
+  color: var(--cor-secundaria-orange-36);
+  margin-top: 15px;
+}
+.btnAdd{
 }
 .organization {
   display: flex;
-  margin-left: 20px;
+  
   gap: 10px;
 }
-.widproductname{
-  width: 50%;
+.widProductName{
+  width: 70%;
+  display: flex;
+  flex-direction: column;
 }
-.quantity, .productname, .Price {
+.quantity,.productName, .price {
 margin-top: 3px;
 border-radius: 4px;
 height: 25px;
 padding: 5px;
 }
+.price{
+  width: 100px;
+}
 .quantity {
   width: 90%;
 }
-.productname {
+.productName {
   width: 100%;
 }
-.widprice {
+.widPrice {
 margin-left: 20px;
 }
-.addproduct {
+.addProduct {
   margin-left: 63%;
   margin-top: 1%;
   margin-bottom: 1%;
 }
-.Buttoncancelsave {
+.buttonAlteration {
   display: flex;
  gap: 15px;
  justify-content: end;
@@ -134,7 +168,7 @@ margin-right: 5%;
 /*Organização da tabela*/
 table{
   width: 95%;
-  margin: 0px 0px 425px 20px;
+
 }
 th{
   background-color: rgb(206, 206, 206);

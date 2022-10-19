@@ -5,66 +5,66 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/index.css">
-    <script src="/index.js" defer></script>
+    <link rel="stylesheet" href="/assets/fontawesome/fontawesome-free-6.2.0-web/css/all.css">
+    <script src="/index.js" defer></script>    
     <title>Projeto</title>
   </head>
   <body>
-    <div class="container">
-        <main class="fullpagine">
-          <section class="Logoleft">
-            <div class="mascaraLogo">
-              <img src="/assets/img/Group 24.png" alt="" />
+    <main class="fullPagine">
+      <section class="soonLeft">
+          <div class="maskSoon">
+            <img src="/assets/img/Group 24.png" alt="" />
+          </div>
+          <div class="specification">
+            <p class="paragraphMain">Operador: Marialucia</p>
+            <p class="paragraphMain">Data - Hora 12/08/2022 - 15:29</p>
+            <p class="paragraphMain">Versão: 1.0</p>
+        </div>
+      </section>
+      <section class="requests">
+        <div class="container">
+          <h1>Novo Pedido</h1>
+          <h4 class="titles">Tipo de consumo</h4>
+          <div class="maskInput">
+            <div class="typeDelevery">
+              <input type="radio" name="TipoConsumo"/>
+              <p class="paragraphMain">Delivery</p>
             </div>
-
-            <div class="specification">
-              <p>Operador: Marialucia</p>
-              <p>Data - Hora 12/08/2022 - 15:29</p>
-              <p>Versão: 1.0</p>
+            <div class="typeSalao">
+              <input type="radio" name="TipoConsumo" class="" />
+              <p class="paragraphMain">Salão</p>
             </div>
-          </section>
-          <section class="Pedidos">
-            <div class="TopTitle"><h1>Novo Pedido</h1></div>
-            <div class="titles"><h4>Tipo de consumo</h4></div>
-            <div class="mascarainput">
-              <input type="radio" name="TipoConsumo" class="check" />
-              <p>Delivery</p>
-
-              <input type="radio" name="TipoConsumo" class="check distanciaCheck" />
-              <p>Salão</p>
+          </div>
+          <div class="search">
+            <div class="searchProduct">
+              <label class="paragraphMain labelSearch">Buscar produto</label>
+              <input type="text" name="CodigoProduto" placeholder="Código do produto" class="searchCod inputMain"/>
             </div>
-           
-            <div class="search">
-              <p>Buscar produto</p>
-              <input
-                type="text"
-                name="CodigoProduto"
-                placeholder="Código do produto"
-                class="searchcod input_main" 
-              />
-              <input type="button" value="buscar" class="searchbtn button_main" />
+            <button type="button" class="searchBtn buttonMain">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <p>Buscar</p>
+            </button>
+          </div>
+          <div class="organization">
+            <div>
+              <label class="paragraphMain labelSearch">Quantidade</label>
+              <input type="number" class="quantity inputMain" placeholder="1" value="1" min = '1' onchange ="calcula()" />
             </div>
-
-            <div class="organization">
-              <div class="widquantity">
-                <p>Quantidade</p>
-                <input type="number" class="quantity input_main" placeholder="0" />
-              </div>
-              <div class="widproductname">
-                <p>Produto</p>
-                <input
-                  type="text"
-                  class="productname input_main"
-                  placeholder="Nome do produto"
-                />
-              </div>
-              <div class="widprice">
-                <p>Preço</p>
-                <input type="number" class="Price input_main" placeholder="R$ 00,00" />
-              </div>
+            <div class="widProductName">
+              <label class="paragraphMain labelSearch">Produto</label>
+              <input type="text"class="productName inputMain" value="Nome do produto" disabled/>
             </div>
-            <div class="addproduct">
-              <input type="button" value="Adicionar produto" class="button_main" />
+            <div class="widPrice">
+              <label class="paragraphMain labelSearch">Preço</p>
+              <input type="text" class="price inputMain" value="R$ 00,00" disabled/>  
             </div>
+          </div>
+          <div class="addProduct">
+            <button type="button" class="btnAdd buttonMain">
+              <img src="/assets/svg/plusSymbol.svg" alt="">
+              <p>Adicionar Produto</p>
+            </button>
+          </div>
             <table>
               <tr>
                 <th>Código</th>
@@ -73,17 +73,19 @@
                 <th>Valor</th>
               </tr>
             </table>
-            <div class="Buttoncancelsave">
-              <input type="button" value="Cancelar" class="button_main" />
-              <input type="button" value="Salvar Pedido" class="button_main" />
+            <div class="buttonAlteration">
+              <input type="button" value="Cancelar" class="buttonMain" />
+              <input type="button" value="Salvar Pedido" class="buttonMain" />
             </div>
-          </section>
-        </main>
-        <footer>
-          <div class="finallyline">
-            Copyright @ 2022 easYcode - Todos os direitos reservados
-          </div>
-        </footer>
-    </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="container">
+        <div class="finallyline">
+          Copyright @ 2022 easYcode - Todos os direitos reservados
+        </div>
+     </div>
+    </footer>
   </body>
 </html>
