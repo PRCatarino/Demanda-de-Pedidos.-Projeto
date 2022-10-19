@@ -198,29 +198,32 @@ margin-left: 20px;
 table{
   width: 100%;
   font-family: 'Barlow';
-  border-top:1px solid var(--cor-principal-black-70);
-  border-bottom:1px solid var(--cor-principal-black-70);
   margin-bottom:40px;
 }
 th{
   background-color: var(--cor-principal-black-90);
+  border-top:1px solid var(--cor-principal-black-70);
+  border-bottom:1px solid var(--cor-principal-black-70);
   color:black;
+  text-align: center;
   border-radius: 2px;
 }
 th{
   padding:7px;
-  text-align: start;
+  text-align: center;
 }
 td{
   padding:7px;
-  text-align: start;
-  
+  text-align: center;
+  border-top:1px solid var(--cor-principal-black-90);
+  border-bottom:1px solid var(--cor-principal-black-90);
 }
 .codeTable{
   width: 10%;
 }
 .productTable{
   width:70%;
+  border-left:0.8px solid white;
 }
 .quantityTable{
   width: 10%;
@@ -229,4 +232,9 @@ td{
 .valueProductTable{
   width: 10%;
   border-left:0.8px solid white;
+}
+
+h2{
+  font-size:25px;
+  color: var(--cor-principal-black-40);
 }

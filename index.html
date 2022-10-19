@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/index.css">
     <link rel="stylesheet" href="/assets/fontawesome/fontawesome-free-6.2.0-web/css/all.css">
-    <script src="/index.js" defer></script>    
+    <script src="/index.js" type="module" defer></script>    
     <title>Projeto</title>
   </head>
   <body>
@@ -48,7 +48,7 @@
           <div class="organization">
             <div>
               <label class="paragraphMain labelSearch">Quantidade</label>
-              <input type="number" class="quantity inputMain" placeholder="1" value="1" min = '1' onchange ="calcula()" />
+              <input type="number" class="quantity inputMain" placeholder="1" value="1" min = '1'/>
             </div>
             <div class="widProductName">
               <label class="paragraphMain labelSearch">Produto</label>
@@ -73,6 +73,10 @@
                 <th class="valueProductTable">Valor</th>
               </tr>
             </table>
+            <div class="totalRequest" hidden>
+              <h2>TOTAL DO PEDIDO:</h2>
+              <h2 class="valueTotal"></h2>
+            </div>
           <div class="buttonAlteration">
               <input type="button" value="Cancelar" class="buttonMain cancelBtn" />
               <input type="button" value="Salvar Pedido" class="buttonMain saveBtn" />
