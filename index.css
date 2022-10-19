@@ -5,14 +5,18 @@
 @import url(assets/css/select.css);
 @import url(assets/css/input.css);
 
+body{
+  background-color: #FAFAFA;
+}
 *{
   margin: 0;
   padding: 0;
 }
 .container{
-  max-width: 1200px;
-  margin:0 auto;
+  max-width: 1500px;
+  margin: 0 auto;
 }
+
 
 h1,h2,h3,h4,p,label{
   font-family: 'Barlow';
@@ -27,7 +31,7 @@ h1,h2,h3,h4,p,label{
   flex-direction: column;
   display: flex;
   margin: 0 auto;
-  height: 100%;
+
   background-color: #FFFFFF;
   padding: 0px 35px 20px 35px;
   border-radius:4px;
@@ -51,11 +55,12 @@ h1,h2,h3,h4,p,label{
 }
 
 .paragraphMain{
-  color: gray;
+  color:var(--cor-principal-black-50);
   font-weight: 500;
 }
 
 /* Footer*/
+
 .finallyline {
   font-family: 'Barlow';
   color: grey;
@@ -71,7 +76,6 @@ h1,h2,h3,h4,p,label{
 
 /*Parte Direita*/
 .requests {
-  background-color: #FAFAFA;
   padding: 0px 50px;
   width: 100%;
   margin-top: 30px;
@@ -79,15 +83,18 @@ h1,h2,h3,h4,p,label{
 .requests h1 {
   font-weight: 600;
   font-size: 50px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  color:var(--cor-principal-black-30);
 }
 .titles{
-  margin-top: 10px;
+  margin-bottom: 20px;
+  color:var(--cor-principal-black-40);
 }
 .maskInput {
   display: flex;
   justify-content: space-between;
   width: 200px;
+  margin-bottom:60px;
 }
 .typeDelevery{
   display: flex;
@@ -101,6 +108,7 @@ h1,h2,h3,h4,p,label{
 }
 .search{
   display: flex;
+  margin-bottom:25px;
 }
 .searchProduct{
   display: flex;
@@ -123,12 +131,14 @@ h1,h2,h3,h4,p,label{
   background-color: #FFF;
   color: var(--cor-secundaria-orange-36);
   margin-top: 15px;
+  transition: background 0.3s;
 }
-.btnAdd{
+.searchBtn:hover{
+  background-color:var(--cor-secundaria-orange-96);
 }
 .organization {
   display: flex;
-  
+  margin-bottom: 15px;
   gap: 10px;
 }
 .widProductName{
@@ -142,39 +152,81 @@ border-radius: 4px;
 height: 25px;
 padding: 5px;
 }
-.price{
-  width: 100px;
-}
 .quantity {
   width: 90%;
 }
 .productName {
   width: 100%;
+  background-color: var(--cor-principal-black-90);
+}
+.price{
+  width: 100px;
+  background-color: var(--cor-principal-black-90);
 }
 .widPrice {
 margin-left: 20px;
 }
 .addProduct {
-  margin-left: 63%;
-  margin-top: 1%;
-  margin-bottom: 1%;
+  display: flex;
+  justify-content: flex-end;
+}
+.btnAdd{
+  background-color:var(--cor-principal-black-70);
+  border:none;
+  margin-bottom: 40px;
 }
 .buttonAlteration {
   display: flex;
- gap: 15px;
- justify-content: end;
-margin-right: 5%;
+  gap: 15px;
+  justify-content: end;
+}
+.cancelBtn{
+  background-color: rgba(255, 255, 255, 0);
+  color:#6d37ff;
+  font-weight: bolder;
+  border:none;
+  transition: background 0.3s;
+}
+.cancelBtn:hover{
+  background-color:#6c37ff1c;
+}
+.saveBtn{
+  background-color: var(--cor-principal-black-70);
+  border:none;
 }
 /*Organização da tabela*/
 table{
-  width: 95%;
-
+  width: 100%;
+  font-family: 'Barlow';
+  border-top:1px solid var(--cor-principal-black-70);
+  border-bottom:1px solid var(--cor-principal-black-70);
+  margin-bottom:40px;
 }
 th{
-  background-color: rgb(206, 206, 206);
+  background-color: var(--cor-principal-black-90);
   color:black;
+  border-radius: 2px;
 }
-th,td{
+th{
   padding:7px;
   text-align: start;
+}
+td{
+  padding:7px;
+  text-align: start;
+  
+}
+.codeTable{
+  width: 10%;
+}
+.productTable{
+  width:70%;
+}
+.quantityTable{
+  width: 10%;
+  border-left:0.8px solid white;
+}
+.valueProductTable{
+  width: 10%;
+  border-left:0.8px solid white;
 }

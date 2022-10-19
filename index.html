@@ -10,19 +10,19 @@
     <title>Projeto</title>
   </head>
   <body>
-    <main class="fullPagine">
-      <section class="soonLeft">
-          <div class="maskSoon">
-            <img src="/assets/img/Group 24.png" alt="" />
+    <div class="container">
+      <main class="fullPagine">
+        <section class="soonLeft">
+            <div class="maskSoon">
+              <img src="/assets/img/Group 24.png" alt="" />
+            </div>
+            <div class="specification">
+              <p class="paragraphMain">Operador: Marialucia</p>
+              <p class="paragraphMain">Data - Hora 12/08/2022 - 15:29</p>
+              <p class="paragraphMain">Versão: 1.0</p>
           </div>
-          <div class="specification">
-            <p class="paragraphMain">Operador: Marialucia</p>
-            <p class="paragraphMain">Data - Hora 12/08/2022 - 15:29</p>
-            <p class="paragraphMain">Versão: 1.0</p>
-        </div>
-      </section>
-      <section class="requests">
-        <div class="container">
+        </section>
+        <section class="requests">
           <h1>Novo Pedido</h1>
           <h4 class="titles">Tipo de consumo</h4>
           <div class="maskInput">
@@ -67,25 +67,25 @@
           </div>
             <table>
               <tr>
-                <th>Código</th>
-                <th>Produto</th>
-                <th>Quantidade</th>
-                <th>Valor</th>
+                <th class="codeTable">Código</th>
+                <th class="productTable">Produto</th>
+                <th class="quantityTable">Quantidade</th>
+                <th class="valueProductTable">Valor</th>
               </tr>
             </table>
-            <div class="buttonAlteration">
-              <input type="button" value="Cancelar" class="buttonMain" />
-              <input type="button" value="Salvar Pedido" class="buttonMain" />
-            </div>
-        </div>
-      </section>
-    </main>
-    <footer>
-      <div class="container">
-        <div class="finallyline">
-          Copyright @ 2022 easYcode - Todos os direitos reservados
-        </div>
-     </div>
-    </footer>
+          <div class="buttonAlteration">
+              <input type="button" value="Cancelar" class="buttonMain cancelBtn" />
+              <input type="button" value="Salvar Pedido" class="buttonMain saveBtn" />
+          </div>
+        </section>
+      </main>
+      <footer>
+        <div class="container">
+          <div class="finallyline">
+            Copyright @ 2022 easYcode - Todos os direitos reservados
+          </div>
+       </div>
+      </footer>
+    </div>
   </body>
 </html>

@@ -1,7 +1,7 @@
 .buttonMain{
-    height: 40px;
+    height: 37px;
     border-radius: 8px;
-    padding:10px 16px;
+    padding:0px 16px;
     color:white;
     border:1px solid var(--cor-secundaria-orange-66);
     background-color:var(--cor-secundaria-orange-66);
