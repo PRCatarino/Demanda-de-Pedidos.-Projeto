@@ -1,24 +1,34 @@
 import listProduct from '/assets/data.js'
-let produto = null
 
+const arrItems = []
+let produto = null
+let contador = 0
+// let preenchido = ''
 function addEvent(e){
     document.querySelector('.searchBtn').addEventListener('click', preencherProdutoBusca);
     document.querySelector('.quantity').addEventListener('change', changeQuantity);
     document.querySelector('.btnAdd').addEventListener('click',  addProduct);
 }
+
+// function confirma(){
+//     let productName = document.querySelector('.productName');
+//     let codigoProduto = document.querySelector('.searchCod').value;
+//     let produtoEncontrado = searchProduct(codigoProduto);
+// }
 function searchProduct(codigoProduto){
     let produtoEncontrado = listProduct.find(product =>{
         
         return product.codigo == codigoProduto
     });
     
-   return produtoEncontrado;
+    return produtoEncontrado;
 }
+
     
 function preencherProdutoBusca(){
     let productName = document.querySelector('.productName');
     let codigoProduto = document.querySelector('.searchCod').value;
-    let produtoEncontrado = searchProduct(codigoProduto)
+    let produtoEncontrado = searchProduct(codigoProduto);
     productName.setAttribute("value", produtoEncontrado.product);
     
     produto = produtoEncontrado
@@ -26,34 +36,47 @@ function preencherProdutoBusca(){
 }
 
 function calc(price){
-
-    const quantity = document.querySelector('.quantity')
-    let elementPrice = document.querySelector('.price')
-   
+    const quantity = document.querySelector('.quantity');
+    let elementPrice = document.querySelector('.price');
     let result = Number(price) * Number(quantity.value);
     
-    elementPrice.setAttribute('value', `R$${result}`);
+    elementPrice.setAttribute('value', `R$ ${result}.00`);
 }
+
 function changeQuantity(){
     calc(produto.price)
 }
-
 function addProduct(){
-    const code = document.querySelector('.searchCod').value;
-    const quantity = document.querySelector('.quantity').value;
-    const product = document.querySelector('.productName').value;
-    const price = document.querySelector('.price').value;
+    document.querySelector('.totalRequest').removeAttribute('hidden');
+    const valor = document.querySelector('.price').value.replace('R$', '');
+    const button = document.querySelector('.btnAdd')
     const table = document.querySelector('tbody');
-
+    button.style.backgroundColor = 'var(--cor-secundaria-orange-46)'
+    arrItems.push({ 
+        code: document.querySelector('.searchCod').value,
+        quantity: document.querySelector('.quantity').value,
+        product: document.querySelector('.productName').value, 
+        price : document.querySelector('.price').value,
+        total : parseFloat(valor)
+    })
+   
+ 
     table.innerHTML += `
     <tr>
-        <td class="codeTable">${code}</td>
-        <td class="productTable">${product}</td>
-        <td class="quantityTable">${quantity}</td>
-        <td class="valueProductTable">${price}</td>
+        <td class="codeTabl">${arrItems[contador].code}</td>
+        <td class="productTable">${arrItems[contador].product}</td>
+        <td class="quantityTable">${arrItems[contador].quantity}</td>
+        <td class="valueProductTable priceTable">${arrItems[contador].price}</td>
     </tr>
+    `  
+    contador++
     
-    `
-    
+    let sumTotal = arrItems.reduce((total,atual)=>{
+        return total + atual.total;
+    },0);
+
+    document.querySelector('.valueTotal').innerHTML = `R$ ${sumTotal}, 00`
+ 
 }
-addEvent();
+
+addEvent()
