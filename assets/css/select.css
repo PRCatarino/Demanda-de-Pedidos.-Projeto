@@ -1,17 +1,18 @@
 .selectMain{
-    height: 45px;
-    width: 372px;
-    padding:12px 12px 12px 16px;
-    border-radius:8px;
+    height: 37px;
+    width: 70px;
+    padding:0px 20px 0px 10px;
+    border-radius:5px;
     -webkit-appearance: none;
     -moz-appearance: none;
-    background: url(/assets/svg/up-arrow-svgrepo-com.svg) no-repeat  center right 10px #FFF;
-    background-size: 20px;
-    border: 1px solid #333;
+    background: url(/assets/img/sort-down.png) no-repeat center right 5px #FFF;
+    background-size: 15px;
+    border: 1px solid var(--cor-principal-black-50);
     font-size: 16px;
-    padding-right: 20px;
+    
 }
-.selectMain:focus{
-    background: url(/assets/svg/up-arrow-svgrepo-com.svg) no-repeat  center right 10px #FFF;
-    background-size: 20px;
+.selectMain:focus-within{
+    background: url(/assets/img/sort-up.png) no-repeat  center right 5px #FFF;
+    background-size: 15px;
+    
 }

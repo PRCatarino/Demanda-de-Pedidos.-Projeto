@@ -5,6 +5,7 @@
 @import url(assets/css/select.css);
 @import url(assets/css/input.css);
 
+
 body{
   background-color: #FAFAFA;
 }
@@ -52,6 +53,7 @@ h1,h2,h3,h4,p,label{
  row-gap: 8px;
  align-items: baseline;
  flex-direction: column;
+ color:var(--cor-principal-black-50);
 }
 
 .paragraphMain{
@@ -63,7 +65,7 @@ h1,h2,h3,h4,p,label{
 
 .finallyline {
   font-family: 'Barlow';
-  color: grey;
+  color: var(--cor-principal-black-50);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -207,13 +209,13 @@ margin-left: 20px;
 }
 .cancelBtn{
   background-color: rgba(255, 255, 255, 0);
-  color:#6d37ff;
+  color:var(--cor-tercearia-roxo-32);
   font-weight: bolder;
   border:none;
   transition: background 0.3s;
 }
 .cancelBtn:hover{
-  background-color:#6c37ff1c;
+  background-color:var(--cor-tercearia-roxo-92);
 }
 .saveBtn{
   background-color: var(--cor-principal-black-70);
@@ -265,4 +267,13 @@ h2{
 }
 .active{
   background-color: var(--cor-secundaria-orange-36);
+}
+.linkSite{
+  text-decoration: none;
+}
+.newOrder {
+  margin-bottom: 70px;
+  background: var(--cor-tercearia-roxo-52);
+  border:none;
+  
 }

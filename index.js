@@ -1,12 +1,16 @@
-import listProduct from '/assets/data.js'
+import listProduct from '/assets/product.js'
 
+const button = document.querySelector('.btnAdd');
+const alert = document.getElementById('boxAlert');
+const btnSave = document.getElementById('saveBtn');
 const arrItems = [];
 let produto = null;
 let contador = 0;
 let productName = '';
 let codigoProduto = '';
-const alert = document.getElementById('boxAlert');
-function addEvent(e){
+
+
+function addEvent(){
     document.querySelector('.searchBtn').addEventListener('click', preencherProdutoBusca);
     document.querySelector('.quantity').addEventListener('change', changeQuantity);
     document.querySelector('.btnAdd').addEventListener('click',  addProduct);
@@ -24,11 +28,16 @@ function searchProduct(codigoProduto){
 function preencherProdutoBusca(){
     productName = document.querySelector('.productName');
     codigoProduto = document.querySelector('.searchCod').value;
+    document.querySelector('.btnAdd').removeAttribute('disabled')
     alert.classList.remove('alertOn')
     alert.classList.add('alertOff');
+    
     if(codigoProduto != ''){
         let produtoEncontrado = searchProduct(codigoProduto);
+        button.style.backgroundColor = 'var(--cor-secundaria-orange-46)'
+
         productName.setAttribute("value", produtoEncontrado.product);
+        
         produto = produtoEncontrado
         calc(produtoEncontrado.price)
 }   else{
@@ -38,8 +47,6 @@ function preencherProdutoBusca(){
     }
 }
  
-
-
 
 function calc(price){
     const quantity = document.querySelector('.quantity');
@@ -53,11 +60,12 @@ function changeQuantity(){
     calc(produto.price)
 }
 function addProduct(){
-    document.querySelector('.totalRequest').removeAttribute('hidden');
     const valor = document.querySelector('.price').value.replace('R$', '');
-    const button = document.querySelector('.btnAdd')
     const table = document.querySelector('tbody');
-    button.style.backgroundColor = 'var(--cor-secundaria-orange-46)'
+    btnSave.removeAttribute('disabled')
+    document.querySelector('.totalRequest').removeAttribute('hidden');
+    btnSave.classList.add('newOrder')
+    
     arrItems.push({ 
         code: document.querySelector('.searchCod').value,
         quantity: document.querySelector('.quantity').value,

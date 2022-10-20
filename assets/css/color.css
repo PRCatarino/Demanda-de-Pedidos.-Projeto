@@ -1,8 +1,8 @@
 :root{
     --cor-principal-black: 0, 0%;
     --cor-secundaria-orange:29, 100%;
-    --cor-tercearia-blue:256, 100%;
-  
+    --cor-tercearia-roxo:256, 100%;
+
     --cor-principal-black-20: hsl(var(--cor-principal-black), 20%);
     --cor-principal-black-30: hsl(var(--cor-principal-black), 30%);
     --cor-principal-black-40: hsl(var(--cor-principal-black), 40%);
@@ -19,10 +19,10 @@
     --cor-secundaria-orange-96: hsl(var(--cor-secundaria-orange), 96%);
   
   
-    --cor-tercearia-blue-32: hsl(var( --cor-tercearia-blue), 32%);
-    --cor-tercearia-blue-42: hsl(var( --cor-tercearia-blue), 42%);
-    --cor-tercearia-blue-52: hsl(var( --cor-tercearia-blue), 52%);
-    --cor-tercearia-blue-62: hsl(var( --cor-tercearia-blue), 62%);
-    --cor-tercearia-blue-72: hsl(var( --cor-tercearia-blue), 72%);
-    --cor-tercearia-blue-92: hsl(var( --cor-tercearia-blue), 92%);
+    --cor-tercearia-roxo-32: hsl(var(--cor-tercearia-roxo), 32%);
+    --cor-tercearia-roxo-42: hsl(var(--cor-tercearia-roxo), 42%);
+    --cor-tercearia-roxo-52: hsl(var(--cor-tercearia-roxo), 52%);
+    --cor-tercearia-roxo-62: hsl(var(--cor-tercearia-roxo), 62%);
+    --cor-tercearia-roxo-72: hsl(var(--cor-tercearia-roxo), 72%);
+    --cor-tercearia-roxo-92: hsl(var(--cor-tercearia-roxo), 92%);
   }
