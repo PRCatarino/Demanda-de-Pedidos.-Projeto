@@ -1,39 +1,45 @@
 import listProduct from '/assets/data.js'
 
-const arrItems = []
-let produto = null
-let contador = 0
-// let preenchido = ''
+const arrItems = [];
+let produto = null;
+let contador = 0;
+let productName = '';
+let codigoProduto = '';
+const alert = document.getElementById('boxAlert');
 function addEvent(e){
     document.querySelector('.searchBtn').addEventListener('click', preencherProdutoBusca);
     document.querySelector('.quantity').addEventListener('change', changeQuantity);
     document.querySelector('.btnAdd').addEventListener('click',  addProduct);
 }
 
-// function confirma(){
-//     let productName = document.querySelector('.productName');
-//     let codigoProduto = document.querySelector('.searchCod').value;
-//     let produtoEncontrado = searchProduct(codigoProduto);
-// }
+
 function searchProduct(codigoProduto){
     let produtoEncontrado = listProduct.find(product =>{
-        
         return product.codigo == codigoProduto
     });
-    
     return produtoEncontrado;
 }
 
     
 function preencherProdutoBusca(){
-    let productName = document.querySelector('.productName');
-    let codigoProduto = document.querySelector('.searchCod').value;
-    let produtoEncontrado = searchProduct(codigoProduto);
-    productName.setAttribute("value", produtoEncontrado.product);
-    
-    produto = produtoEncontrado
-    calc(produtoEncontrado.price)
+    productName = document.querySelector('.productName');
+    codigoProduto = document.querySelector('.searchCod').value;
+    alert.classList.remove('alertOn')
+    alert.classList.add('alertOff');
+    if(codigoProduto != ''){
+        let produtoEncontrado = searchProduct(codigoProduto);
+        productName.setAttribute("value", produtoEncontrado.product);
+        produto = produtoEncontrado
+        calc(produtoEncontrado.price)
+}   else{
+        
+        alert.classList.remove('alertOff');
+        alert.classList.add('alertOn')
+    }
 }
+ 
+
+
 
 function calc(price){
     const quantity = document.querySelector('.quantity');
