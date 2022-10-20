@@ -26,22 +26,25 @@ function searchProduct(codigoProduto){
 
     
 function preencherProdutoBusca(){
+    let inputSearch = document.getElementById('searchCode');
     productName = document.querySelector('.productName');
     codigoProduto = document.querySelector('.searchCod').value;
+    
     document.querySelector('.btnAdd').removeAttribute('disabled')
     alert.classList.remove('alertOn')
     alert.classList.add('alertOff');
     
     if(codigoProduto != ''){
         let produtoEncontrado = searchProduct(codigoProduto);
+        inputSearch.classList.remove('alertActive')
         button.style.backgroundColor = 'var(--cor-secundaria-orange-46)'
 
         productName.setAttribute("value", produtoEncontrado.product);
-        
         produto = produtoEncontrado
         calc(produtoEncontrado.price)
 }   else{
-        
+        inputSearch.classList.add('alertActive')
+
         alert.classList.remove('alertOff');
         alert.classList.add('alertOn')
     }
@@ -53,7 +56,7 @@ function calc(price){
     let elementPrice = document.querySelector('.price');
     let result = Number(price) * Number(quantity.value);
     
-    elementPrice.setAttribute('value', `R$ ${result}.00`);
+    elementPrice.setAttribute('value', `R$ ${result},00`);
 }
 
 function changeQuantity(){

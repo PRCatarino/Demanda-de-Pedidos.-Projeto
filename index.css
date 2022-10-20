@@ -93,7 +93,7 @@ h1,h2,h3,h4,p,label{
   color:var(--cor-principal-black-40);
 }
 .alertOn{
-  position: absolute;
+  position: fixed;
   right:40px;
   top:40px;
   border-radius:3px;
@@ -276,4 +276,8 @@ h2{
   background: var(--cor-tercearia-roxo-52);
   border:none;
   
+}
+.alertActive{
+  border:1px solid red;
+  background-color:rgba(255, 0, 0, 0.247);
 }

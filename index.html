@@ -26,22 +26,16 @@
           <h1>Novo Pedido</h1>
           <h4 class="titles">Tipo de consumo</h4>
           <div class="alertOff" id="boxAlert">
-              <p>POR FAVOR PREENCHA OS CAMPOS</p>
+              <p>POR FAVOR PREENCHA O CAMPO</p>
           </div>
           <div class="maskInput">
-            <div class="typeDelevery">
-              <input type="radio" name="TipoConsumo"/>
-              <p class="paragraphMain">Delivery</p>
-            </div>
-            <div class="typeSalao">
-              <input type="radio" name="TipoConsumo" class="" />
-              <p class="paragraphMain">Salão</p>
-            </div>
+            <input type="radio" name="TipoConsumo"><p class="paragraphMain">Delivery</p>
+            <input type="radio" name="TipoConsumo" class=""><p class="paragraphMain">Salão</p>
           </div>
           <div class="search">
             <div class="searchProduct">
               <label class="paragraphMain labelSearch" >Buscar produto</label>
-              <input type="text" name="CodigoProduto"required placeholder="Código do produto" class="searchCod inputMain"/>
+              <input type="text" name="CodigoProduto"required placeholder="Código do produto" id="searchCode"class="searchCod inputMain"/>
             </div>
             <button type="button" class="searchBtn buttonMain">
               <i class="fa-solid fa-magnifying-glass"></i>
