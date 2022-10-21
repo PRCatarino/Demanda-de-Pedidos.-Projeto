@@ -29,7 +29,7 @@
               <p>POR FAVOR PREENCHA O CAMPO</p>
           </div>
           <div class="maskInput">
-            <input type="radio" name="tipoConsumo" id="tipoConsumo" value="delivery"><p class="paragraphMain">Delivery</p>
+            <input type="radio" name="tipoConsumo" id="tipoConsumo" value="delivery" checked ><p class="paragraphMain">Delivery</p>
             <input type="radio" name="tipoConsumo" id="tipoConsumo" value="salao"><p class="paragraphMain">Salão</p>
           </div>
           <div class="search">
@@ -45,15 +45,15 @@
           <div class="organization">
             <div>
               <label class="paragraphMain labelSearch">Quantidade</label>
-              <input type="number" class="quantity inputMain" placeholder="1" value="1" min = '1'/>
+              <input type="number" class="quantity inputMain" placeholder="1" value="0" min = '1'/>
             </div>
             <div class="widProductName">
               <label class="paragraphMain labelSearch">Produto</label>
-              <input type="text"class="productName inputMain" value="Nome do produto" disabled/>
+              <input type="text"class="productName inputMain" placeholder="Nome do produto" disabled/>
             </div>
             <div class="widPrice">
               <label class="paragraphMain labelSearch">Preço</p>
-              <input type="text" class="price inputMain" value="R$ 00,00" disabled/>  
+              <input type="text" class="price inputMain" placeholder="R$ 00,00" disabled/>  
             </div>
           </div>
           <div class="addProduct">
@@ -99,6 +99,10 @@
                </select>
              </div>
              <div class="print">
+                <button class="buttonMain searchBtn " id="removeItem" >
+                  <i class="fa-solid fa-trash-can"></i>
+                  <p>Excluir</p>
+                </button>
                <button type="button" value="Imprimir" class="buttonMain searchBtn ">
                  <i class="fa-solid fa-print"></i>
                  <p>Imprimir</p>
@@ -108,7 +112,7 @@
            <table class="newRequestTable">
             <tbody class="tBody">
               <tr>
-                <th class="numberRequest"><input type="checkbox">N° do pedido</th>
+                <th class="numberRequest">N° do pedido</th>
                 <th class="itemTable">Itens</th>
                 <th class="typeTable">Tipo</th>
                 <th class="valueTable">Valor</th>

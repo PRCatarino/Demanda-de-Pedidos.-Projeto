@@ -241,7 +241,6 @@ th{
 }
 td{
   padding:7px;
-  text-align: center;
   border-top:1px solid var(--cor-principal-black-90);
   border-bottom:1px solid var(--cor-principal-black-90);
 }
@@ -329,7 +328,53 @@ h2{
 .ocultSection{
   display: none;
 }
-.flex{
+
+.print{
   display: flex;
-  flex-direction: column;
+  gap: 30px;
+}
+.checkBox{
+  margin-right: 20px;
+}
+.btnStatusReceived,.btnStatusDelivered,.btnStatusReady{
+  margin:0; 
+  font-family: 'ballow';
+  font-weight: bolder;
+  height: 37px;
+  border-radius: 8px;
+  padding:0px 16px;
+  color:white;
+  border:1px solid var(--cor-secundaria-orange-66);
+  background-color:var(--cor-secundaria-orange-66);
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  transition: width 1s, height 1s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.btnStatusReceived,.btnStatusDelivered,.btnStatusReady{
+  cursor: pointer;
+}
+.btnStatusReceived,.btnStatusDelivered,.btnStatusReady{
+  background-color: var(--cor-principal-black-60);
+  color:var(--cor-principal-black-30);
+  border:1px solid var(--cor-principal-black-50);
+}
+.btnStatusReceived{
+  background-color: var(--cor-principal-black-60);
+  color:var(--cor-principal-black-30);
+  border:1px solid var(--cor-principal-black-50);
+}
+.btnStatusDelivered{
+  background-color: rgb(0, 158, 0);
+  color:rgb(1, 105, 1);
+  border:1px solid rgb(2, 138, 2);
+}
+.btnStatusReady{
+  background-color: yellow;
+  color:rgb(150, 150, 0);
+  border:1px solid rgb(158, 158, 0);
 }
