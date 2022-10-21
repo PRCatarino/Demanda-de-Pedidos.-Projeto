@@ -281,3 +281,55 @@ h2{
   border:1px solid red;
   background-color:rgba(255, 0, 0, 0.247);
 }
+@import url(/index.css);
+
+.requests > a{
+  text-decoration: none;
+}
+
+.newOrder:hover{
+  background: var(--cor-tercearia-roxo-42);
+}
+.filterBy{
+  margin-bottom:10px;
+  font-size: 20px;
+  color:var(--cor-principal-black-40);
+}
+.boxFilter{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom:15px;
+}
+.filterBtn {
+  display: flex;
+  gap: 10px;
+}
+.numberRequest{
+  width: 20%;
+  text-align: start;
+  font-weight: bold;
+}
+.numberRequest > input{
+  margin-right: 10px;
+  width: 14px;
+  height: 14px;
+}
+.itemTable{
+  font-weight: bold;
+  width: 50%;
+  text-align: start;
+   border-left:0.8px solid white;
+}
+.typeTable,.valueTable,.statusTable {
+  width: 10%;
+  text-align: start;
+  border-left:0.8px solid white;
+}
+
+.ocultSection{
+  display: none;
+}
+.flex{
+  display: flex;
+  flex-direction: column;
+}

@@ -1,6 +1,6 @@
 .selectMain{
     height: 37px;
-    width: 70px;
+    width: 100px;
     padding:0px 20px 0px 10px;
     border-radius:5px;
     -webkit-appearance: none;
@@ -9,7 +9,7 @@
     background-size: 15px;
     border: 1px solid var(--cor-principal-black-50);
     font-size: 16px;
-    
+    font-family: 'Barlow';
 }
 .selectMain:focus-within{
     background: url(/assets/img/sort-up.png) no-repeat  center right 5px #FFF;
