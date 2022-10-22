@@ -5,9 +5,23 @@
 @import url(assets/css/select.css);
 @import url(assets/css/input.css);
 
+.disable::placeholder{
+  color: var(--cor-principal-20);
+}
+.searchCod:-webkit-autofill:focus,
+.searchCod:-webkit-autofill:hover,
+.searchCod:-webkit-autofill:valid{
 
+  -webkit-text-fill-color:var(--cor-principal-60);
+  -webkit-box-shadow:0 0 0 9000px var(--cor-principal-10) inset
+}
+.searchCod,.quantity{
+  border:1px solid var(--cor-principal-20);
+  background-color:var(--cor-principal-10);
+  
+}
 body{
-  background-color: #FAFAFA;
+  background-color:var(--cor-principal-20);
 }
 *{
   margin: 0;
@@ -24,7 +38,6 @@ h1,h2,h3,h4,p,label{
 }
 .fullPagine{
   display: flex;
-  border-bottom: #FAFAFA solid 0.5px;
 }
 
 /* Pate Lateral esquerda*/
@@ -32,11 +45,10 @@ h1,h2,h3,h4,p,label{
   flex-direction: column;
   display: flex;
   margin: 0 auto;
-
-  background-color: #FFFFFF;
+  background-color: var(--cor-principal-10);
   padding: 0px 35px 20px 35px;
-  border-radius:4px;
-  box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
+  border-radius:2px;
+  box-shadow:var(--cor-principal-20) 0px 8px 24px;
   z-index: 99;
 }
 .maskSoon {
@@ -53,11 +65,11 @@ h1,h2,h3,h4,p,label{
  row-gap: 8px;
  align-items: baseline;
  flex-direction: column;
- color:var(--cor-principal-black-50);
+ color:var(--cor-principal-50);
 }
 
 .paragraphMain{
-  color:var(--cor-principal-black-50);
+  color:var(--cor-principal-50);
   font-weight: 500;
 }
 
@@ -65,7 +77,7 @@ h1,h2,h3,h4,p,label{
 
 .finallyline {
   font-family: 'Barlow';
-  color: var(--cor-principal-black-50);
+  color: var(--cor-principal-50);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -73,7 +85,6 @@ h1,h2,h3,h4,p,label{
 }
 .finallyline {
   width: 100%;
-  height: 5%;
 }
 
 /*Parte Direita*/
@@ -86,11 +97,12 @@ h1,h2,h3,h4,p,label{
   font-weight: 600;
   font-size: 50px;
   margin-bottom: 30px;
-  color:var(--cor-principal-black-30);
+  color:var(--cor-principal-70);
+  
 }
 .titles{
   margin-bottom: 20px;
-  color:var(--cor-principal-black-40);
+  color:var(--cor-principal-70);
 }
 .alertOn{
   position: fixed;
@@ -152,16 +164,23 @@ h1,h2,h3,h4,p,label{
   height: 25px;
   padding: 5px; 
 }
+.searchCod input:focus{
+  background-color: var(--cor-principal-20);
+}
+.searchCod input:active{
+  background-color: var(--cor-principal-20);
+}
 
 .searchBtn{
-  border:1px solid var(--cor-secundaria-orange-36);
-  background-color: #FFF;
-  color: var(--cor-secundaria-orange-36);
+  border:1px solid var(--cor-secundaria-36);
+  background-color: var(--cor-principal-20);
+  color: var(--cor-secundaria-36);
   margin-top: 15px;
   transition: background 0.3s;
 }
 .searchBtn:hover{
-  background-color:var(--cor-secundaria-orange-96);
+  background-color:var(--cor-secundaria-36);
+  color: var(--cor-secundaria-76)
 }
 .organization {
   display: flex;
@@ -182,14 +201,18 @@ padding: 5px;
 .quantity {
   width: 90%;
 }
-.productName {
+.productName{
   width: 100%;
-  background-color: var(--cor-principal-black-90);
+  background-color: var(--cor-principal-50);
+  color: var(--cor-principal-20);
 }
+
 .price{
   width: 100px;
-  background-color: var(--cor-principal-black-90);
+  background-color: var(--cor-principal-50);
+  color: var(--cor-principal-20);
 }
+
 .widPrice {
 margin-left: 20px;
 }
@@ -198,7 +221,7 @@ margin-left: 20px;
   justify-content: flex-end;
 }
 .btnAdd{
-  background-color:var(--cor-principal-black-70);
+  background-color: var(--cor-principal-50);
   border:none;
   margin-bottom: 40px;
 }
@@ -209,16 +232,16 @@ margin-left: 20px;
 }
 .cancelBtn{
   background-color: rgba(255, 255, 255, 0);
-  color:var(--cor-tercearia-roxo-32);
+  color:var(--cor-tercearia-82);
   font-weight: bolder;
   border:none;
   transition: background 0.3s;
 }
 .cancelBtn:hover{
-  background-color:var(--cor-tercearia-roxo-92);
+  background-color:var(--cor-tercearia-52);
 }
 .saveBtn{
-  background-color: var(--cor-principal-black-70);
+  background-color: var(--cor-principal-70);
   border:none;
 }
 /*Organização da tabela*/
@@ -226,73 +249,63 @@ table{
   width: 100%;
   font-family: 'Barlow';
   margin-bottom:40px;
+  background-color: var(--cor-principal-70);
+  border-radius: 4px;
 }
 th{
-  background-color: var(--cor-principal-black-90);
-  border-top:1px solid var(--cor-principal-black-70);
-  border-bottom:1px solid var(--cor-principal-black-70);
-  color:black;
-  text-align: center;
-  border-radius: 2px;
+  background-color: var(--cor-principal-10);
+  color:var(--cor-principal-70);
+  padding: 15px;
+  
 }
-th{
-  padding:7px;
-  text-align: center;
-}
+
 td{
-  padding:7px;
-  border-top:1px solid var(--cor-principal-black-90);
-  border-bottom:1px solid var(--cor-principal-black-90);
+  padding: 15px;
+  border-top:1px solid var(--cor-principal-30);
+  border-bottom:1px solid var(--cor-principal-30);
 }
 .codeTable{
   width: 10%;
 }
 .productTable{
-  width:70%;
-  border-left:0.8px solid white;
+  border-left: 1px solid var(--cor-principal-50);
 }
 .quantityTable{
   width: 10%;
-  border-left:0.8px solid white;
+  border-left:0.8px solid var(--cor-principal-50);
 }
 .valueProductTable{
   width: 10%;
-  border-left:0.8px solid white;
+  border-left:0.8px solid var(--cor-principal-50);
 }
 
 h2{
   font-size:25px;
-  color: var(--cor-principal-black-40);
+  color: var(--cor-principal-50);
 }
 .active{
-  background-color: var(--cor-secundaria-orange-36);
+  background-color: var(--cor-secundaria-36);
 }
 .linkSite{
   text-decoration: none;
 }
 .newOrder {
   margin-bottom: 70px;
-  background: var(--cor-tercearia-roxo-52);
+  background: var(--cor-tercearia-32);
   border:none;
   
+}
+.newOrder:hover{
+  background: var(--cor-tercearia-26);
 }
 .alertActive{
   border:1px solid red;
   background-color:rgba(255, 0, 0, 0.247);
 }
-@import url(/index.css);
-
-.requests > a{
-  text-decoration: none;
-}
-
-.newOrder:hover{
-  background: var(--cor-tercearia-roxo-42);
-}
 .filterBy{
   margin-bottom:10px;
   font-size: 20px;
-  color:var(--cor-principal-black-40);
+  color: var(--cor-principal-50);
 }
 .boxFilter{
   display: flex;
@@ -306,7 +319,6 @@ h2{
 .numberRequest{
   width: 20%;
   text-align: start;
-  font-weight: bold;
 }
 .numberRequest > input{
   margin-right: 10px;
@@ -314,15 +326,14 @@ h2{
   height: 14px;
 }
 .itemTable{
-  font-weight: bold;
   width: 50%;
   text-align: start;
-   border-left:0.8px solid white;
+  border-left:0.8px solid var(--cor-principal-50)
 }
 .typeTable,.valueTable,.statusTable {
   width: 10%;
   text-align: start;
-  border-left:0.8px solid white;
+  border-left:0.8px solid var(--cor-principal-50)
 }
 
 .ocultSection{
@@ -346,8 +357,8 @@ h2{
   border-radius: 8px;
   padding:0px 16px;
   color:white;
-  border:1px solid var(--cor-secundaria-orange-66);
-  background-color:var(--cor-secundaria-orange-66);
+  border:1px solid var(--cor-secundaria-66);
+  background-color:var(--cor-secundaria-66);
   display: flex;
   align-items: center;
   font-size: 16px;
@@ -360,15 +371,11 @@ h2{
 .btnStatusReceived,.btnStatusDelivered,.btnStatusReady{
   cursor: pointer;
 }
-.btnStatusReceived,.btnStatusDelivered,.btnStatusReady{
-  background-color: var(--cor-principal-black-60);
-  color:var(--cor-principal-black-30);
-  border:1px solid var(--cor-principal-black-50);
-}
+
 .btnStatusReceived{
-  background-color: var(--cor-principal-black-60);
-  color:var(--cor-principal-black-30);
-  border:1px solid var(--cor-principal-black-50);
+  background-color:hsla(0, 0%, 53%, 0.575); 
+  color:hsla(0, 0%, 23%, 0.575);
+  border:1px solid hsla(0, 0%, 53%, 0.575);
 }
 .btnStatusDelivered{
   background-color: rgb(0, 158, 0);
@@ -376,10 +383,10 @@ h2{
   border:1px solid rgb(2, 138, 2);
 }
 .btnStatusReady{
-  background-color: yellow;
-  color:rgb(150, 150, 0);
-  border:1px solid rgb(158, 158, 0);
+  background-color: hsla(54, 81%, 41%, 0.979);
+  color:hsl(54, 93%, 49%);
+  border:1px solid hsl(54, 94%, 34%);
 }
 .activeButton{
-  background-color: var(--cor-secundaria-orange-36);
+  background-color: var(--cor-secundaria-36);
 }

@@ -35,7 +35,7 @@
           <div class="search">
             <div class="searchProduct">
               <label class="paragraphMain labelSearch" >Buscar produto</label>
-              <input type="text" name="CodigoProduto"required placeholder="Código do produto" id="searchCode"class="searchCod inputMain"/>
+              <input type="number" name="CodigoProduto"autocomplete="number"required placeholder="Código do produto" id="searchCode"class="searchCod inputMain"/>
             </div>
             <button type="button" class="searchBtn buttonMain">
               <i class="fa-solid fa-magnifying-glass"></i>
@@ -49,11 +49,11 @@
             </div>
             <div class="widProductName">
               <label class="paragraphMain labelSearch">Produto</label>
-              <input type="text"class="productName inputMain" placeholder="Nome do produto" disabled/>
+              <input type="text"class="productName inputMain disable" placeholder="Nome do produto" disabled/>
             </div>
             <div class="widPrice">
               <label class="paragraphMain labelSearch">Preço</p>
-              <input type="text" class="price inputMain" placeholder="R$ 00,00" disabled/>  
+              <input type="text" class="price inputMain disable" placeholder="R$ 00,00" disabled/>  
             </div>
           </div>
           <div class="addProduct">
@@ -62,7 +62,7 @@
               <p>Adicionar Produto</p>
             </button>
           </div>
-            <table>
+            <table id="productsSelected">
               <tr>
                 <th class="codeTable">Código</th>
                 <th class="productTable">Produto</th>
@@ -99,7 +99,7 @@
                </select>
              </div>
              <div class="print">
-                <button class="buttonMain searchBtn " id="removeItem" >
+                <button class="buttonMain searchBtn" id="removeItem" >
                   <i class="fa-solid fa-trash-can"></i>
                   <p>Excluir</p>
                 </button>
@@ -109,10 +109,10 @@
                </button>
              </div>
            </div>
-           <table class="newRequestTable">
+           <table id="newRequestTable">
             <tbody class="tBody">
               <tr>
-                <th class="numberRequest">N° do pedido</th>
+                <th class="numberRequest"><input type="checkbox" id="checkAll" name="checkAll" class="checkBox">N° do pedido</input></th>
                 <th class="itemTable">Itens</th>
                 <th class="typeTable">Tipo</th>
                 <th class="valueTable">Valor</th>
