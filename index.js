@@ -4,6 +4,7 @@ const button = document.querySelector('.btnAdd');
 const alert = document.getElementById('boxAlert');
 const btnSave = document.getElementById('saveBtn');
 const table = document.querySelector('tbody');
+const requestNumbers = [];
 let arrItems = [];
 let quantity = document.querySelector('.quantity ').value
 let sumTotal = 0
@@ -22,6 +23,7 @@ function addEvent(){
     document.querySelector('.newOrder').addEventListener('click',newRequest);
     document.querySelector('.saveBtn').addEventListener('click',saveProductTable);
     document.querySelector('#removeItem').addEventListener('click', excluir);
+    document.querySelector('.cancelBtn').addEventListener('click', cancel);
 }
 
 function alerta(){
@@ -56,7 +58,7 @@ function preencherProdutoBusca(){
     checkFilled()
     if(checkInput){
         inputSearch.classList.remove('alertActive')
-        button.style.backgroundColor = 'var(--cor-secundaria-orange-46)'
+        button.classList.add('activeButton')
         productName = document.querySelector('.productName');
         let produtoEncontrado = searchProduct(codigoProduto);
         productName.value= produtoEncontrado.product;
@@ -114,7 +116,9 @@ function gerarNumber(min, max) {
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-
+function cancel(){
+    console.log('cancelar')
+}
 function saveProductTable(){
 valueRadio = document.querySelector('input[name="tipoConsumo"]:checked');
 if(valueRadio != null){
@@ -137,29 +141,34 @@ if(valueRadio != null){
                 <td><button id="changeReceived-${requestNumber}" class="btnStatusReceived">Recebido</button></td>
             </tr>
             `
-            document.querySelector(`#changeReceived-${requestNumber}`).addEventListener('click', ()=> changeReceived(requestNumber))
+            requestNumbers.push(requestNumber)
+            ativaButtons()
+            // document.querySelector(`#changeReceived-${requestNumber}`).addEventListener('click', changeReceived)
             document.getElementById('page1').classList.add('ocultSection')
             document.getElementById('page2').classList.remove('ocultSection')
         }
     }
 }
-function changeReceived(requestNumber){
-    let buttonClick = document.querySelector(`#changeReceived-${requestNumber}`);
-    let classButton = buttonClick.classList[0];
-    console.log(classButton);
-
+function ativaButtons(){
+    requestNumbers.forEach(requestNumber => document.querySelector(`#changeReceived-${requestNumber}`).addEventListener('click', changeReceived))
+}
+function changeReceived(){
+    let classButton = this.classList[0];
     switch (classButton) {
         case 'btnStatusReceived':
-            buttonClick.classList.remove('btnStatusReceived');
-            buttonClick.classList.add('btnStatusReady');
+            this.classList.remove('btnStatusReceived');
+            this.classList.add('btnStatusReady');
+            this.innerHTML = 'Pronto'
         break;
         case 'btnStatusReady':
-            buttonClick.classList.remove('btnStatusReady');
-            buttonClick.classList.add('btnStatusDelivered');
+            this.classList.remove('btnStatusReady');
+            this.classList.add('btnStatusDelivered');
+            this.innerHTML = 'Entregue'
         break;
         case 'btnStatusDelivered':
-            buttonClick.classList.remove('btnStatusDelivered')
-            buttonClick.classList.add('btnStatusReceived')
+            this.classList.remove('btnStatusDelivered')
+            this.classList.add('btnStatusReceived')
+            this.innerHTML = 'Recebido'
         break;
         default:
         
@@ -168,6 +177,10 @@ function changeReceived(requestNumber){
 function newRequest(){
     document.getElementById('page1').classList.remove('ocultSection');
     document.getElementById('page2').classList.add('ocultSection');
+    btnSave.setAttribute('disabled', '')
+    btnSave.classList.remove('newOrder')
+    button.setAttribute('disabled', '');
+    button.classList.remove('activeButton')
     limparCampo()
     
     table.innerHTML = `

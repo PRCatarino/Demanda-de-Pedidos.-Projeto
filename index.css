@@ -327,6 +327,8 @@ h2{
 
 .ocultSection{
   display: none;
+  background: #ffffff00;
+  transition:background 0.5s ;
 }
 
 .print{
@@ -377,4 +379,7 @@ h2{
   background-color: yellow;
   color:rgb(150, 150, 0);
   border:1px solid rgb(158, 158, 0);
+}
+.activeButton{
+  background-color: var(--cor-secundaria-orange-36);
 }
