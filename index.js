@@ -5,6 +5,7 @@ const alert = document.getElementById('boxAlert');
 const btnSave = document.getElementById('saveBtn');
 const table = document.querySelector('tbody');
 const requestNumbers = [];
+let btnCancel = false;
 let arrItems = [];
 let quantity = document.querySelector('.quantity ').value
 let sumTotal = 0
@@ -23,7 +24,7 @@ function addEvent(){
     document.querySelector('.newOrder').addEventListener('click',newRequest);
     document.querySelector('.saveBtn').addEventListener('click',saveProductTable);
     document.querySelector('#removeItem').addEventListener('click', excluir);
-    document.querySelector('.cancelBtn').addEventListener('click', cancel);
+    document.querySelector('.cancelBtn').addEventListener('click', cancelBtn);
 }
 
 function alerta(){
@@ -116,8 +117,11 @@ function gerarNumber(min, max) {
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-function cancel(){
-    console.log('cancelar')
+function cancelBtn(){
+    if(btnCancel){
+        document.getElementById('page1').classList.add('ocultSection');
+        document.getElementById('page2').classList.remove('ocultSection');
+    }
 }
 function saveProductTable(){
 valueRadio = document.querySelector('input[name="tipoConsumo"]:checked');
@@ -181,6 +185,7 @@ function newRequest(){
     btnSave.classList.remove('newOrder')
     button.setAttribute('disabled', '');
     button.classList.remove('activeButton')
+    btnCancel = true
     limparCampo()
     
     table.innerHTML = `
