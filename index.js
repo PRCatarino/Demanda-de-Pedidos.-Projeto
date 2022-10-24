@@ -6,6 +6,7 @@ const buttonSave = document.getElementById('buttonSave');
 const selectedProductsTable= document.getElementById('productsSelected');
 const inputSearch = document.getElementById('searchCode');
 let quantity = document.querySelector('.quantity ').value
+let tableAllOrder = document.getElementById('newRequestTable');
 let groupNumberRandom = [];
 let codeProduct = '';
 let buttonCancel = false;
@@ -16,8 +17,11 @@ let productName = ''
 let valueRadio = null;
 let checkInput = false;
 let productFound = []
-
-
+let productAllOrder = []
+let arrAllProducts = []
+let arrOrdenado = []
+let newArr = []
+let requestNumber = 0
 function addEvent(){
     document.querySelector('.searchBtn').addEventListener('click', fillSearch);
     document.querySelector('.quantity').addEventListener('change', calcQuantity);
@@ -26,9 +30,11 @@ function addEvent(){
     document.querySelector('#buttonSave').addEventListener('click', saveAllOrders);
     document.querySelector('#removeItem').addEventListener('click', deletItem);
     document.querySelector('.cancelBtn').addEventListener('click', cancel);
+    // document.getElementById('filterType').addEventListener('change',filterTable );
+    // document.getElementById('filterStatus').addEventListener('change',filterTable );
 }
 
-function alerta(){
+function alert(){
     inputSearch.classList.add('alertInput')
     alertWindow.classList.remove('alertOff');
     alertWindow.classList.add('alertOn') 
@@ -50,11 +56,30 @@ function searchProduct(codeProduct){
     return productFound;
 }
 
+// function filterTable(){
+//     let filterType = document.getElementById('filterType').value
+//     let filterStatus = document.getElementById('filterStatus').value
+  
+//     arrAllProducts.forEach((produto)=>{
+//         newArr = produto
+//     })
+//     if(filterType == '1' ){
+//         console.log(newArr)
+//         newArr = arrAllProducts.filter(ob => ob.type == newArr.type)
+//         newArr.forEach(item =>{
+//             console.log(item.product)
+//         })
+//     }else{
+
+//     }
+
+// }
 
 function fillSearch(){
     document.querySelector('.btnAdd').removeAttribute('disabled');
     alertWindow.classList.remove('alertOn');
     alertWindow.classList.add('alertOff');
+    inputSearch.classList.remove('alertInput')
     quantity = document.querySelector('.quantity');
     
     checkFilled()
@@ -74,7 +99,7 @@ function fillSearch(){
        
         
     }else{
-        alerta()
+        alert()
     }
     
 }
@@ -89,12 +114,15 @@ function addProduct(){
     const valor = document.querySelector('.price').value.replace('R$', '');
     document.querySelector('.totalRequest').removeAttribute('hidden');
     buttonSave.classList.add('saveBtn')
+    valueRadio = document.querySelector('input[name="tipoConsumo"]:checked');
+    valueRadio = valueRadio.value
     arrProduct.push({ 
         code: document.getElementById('searchCode').value,
         quantity: document.querySelector('.quantity').value,
         product: productName.value, 
         price : document.querySelector('.price').value,
-        total : parseFloat(valor)
+        total : parseFloat(valor),
+        type:  valueRadio
     })
     selectedProductsTable.innerHTML += `
     <tr class="itemsTable">
@@ -104,7 +132,6 @@ function addProduct(){
         <td class="valueProductTable priceTable">${arrProduct[contador].price}</td>
     </tr>
     `  
-
     contador++
     sumTotal = arrProduct.reduce((total,atual)=>{
         return total + atual.total;
@@ -131,17 +158,17 @@ function cancel(){
     }
 }
 function saveAllOrders(){
-    valueRadio = document.querySelector('input[name="tipoConsumo"]:checked');
-    valueRadio = valueRadio.value
-    let requestNumber = gerarNumber(1 , 90000)
+    arrProduct.forEach((item)=>{
+        arrAllProducts.push(item)
+    })
+    requestNumber = gerarNumber(1 , 90000)
     let product = ''
     
-    let tableAllOrder = document.getElementById('newRequestTable');
+    
     for(let i = 0; i < arrProduct.length; i++){
-        product += `${arrProduct[i].quantity} - ${arrProduct[i].product}</br>`;
-    }
+        product += `${arrProduct[i].quantity} - ${arrProduct[i].product}</br>`
 
-    tableAllOrder.innerHTML +=`
+        tableAllOrder.innerHTML +=`
     
         <tr id="request${requestNumber}" class="allProducts">
             <td><input type="checkbox" value="${requestNumber}" id="requestItem" class="checkBox">${requestNumber}</td>
@@ -151,7 +178,8 @@ function saveAllOrders(){
             <td><button id="changeReceived-${requestNumber}" class="btnStatusReceived">Recebido</button></td>
         </tr>
     `
-        
+    }
+  
 
     groupNumberRandom.push(requestNumber)
     groupNumberRandom.forEach(requestNumber => document.querySelector(`#changeReceived-${requestNumber}`).addEventListener('click', changeReceived))

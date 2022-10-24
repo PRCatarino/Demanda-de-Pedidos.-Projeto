@@ -84,14 +84,16 @@
         <p class="filterBy">Filtra por</p>
         <div class="boxFilter">
           <div class="filterBtn">
-            <select name="Tipo" placeholder="Tipo" class="selectMain filterbutton">
-              <option value="0">Delivery</option>
-              <option value="1">Salão</option>
+            <select name="Tipo" placeholder="Tipo"  class="selectMain filterbutton" id="filterType">
+              <option id="firstType" selected>Tipo</option>
+              <option value="1">Delivery</option>
+              <option value="2">Salão</option>
             </select>
-            <select name="Status" placeholder="Status" class="selectMain filterbutton">
-              <option value="0">Pronto</option>
-              <option value="1">Entregue</option>
-              <option value="2">Recebido</option>
+            <select name="Status" placeholder="Status" class="selectMain filterbutton" id="filterStatus">
+              <option id="firstStatus" selected>Status</option>
+              <option value="1">Pronto</option>
+              <option value="2">Entregue</option>
+              <option value="3">Recebido</option>
             </select>
           </div>
           <div class="print">
