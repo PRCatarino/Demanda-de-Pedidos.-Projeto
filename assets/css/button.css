@@ -1,10 +1,7 @@
 .buttonMain{
-    height: 37px;
+    height: 35px;
     border-radius: 8px;
     padding:0px 16px;
-    color:white;
-    border:1px solid var(--cor-secundaria-66);
-    background-color:var(--cor-secundaria-66);
     display: flex;
     align-items: center;
     font-size: 16px;

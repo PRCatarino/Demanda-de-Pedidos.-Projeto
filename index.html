@@ -6,129 +6,124 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/index.css">
     <link rel="stylesheet" href="/assets/fontawesome/fontawesome-free-6.2.0-web/css/all.css">
-    <script src="/index.js" type="module" defer></script>    
     <title>Projeto</title>
   </head>
   <body>
     <div class="container">
-      <main class="fullPagine">
-        <section class="soonLeft">
-            <div class="maskSoon">
-              <img src="/assets/img/Group 24.png" alt="" />
-            </div>
-            <div class="specification">
-              <p class="paragraphMain">Operador: Marialucia</p>
-              <p class="paragraphMain">Data - Hora 12/08/2022 - 15:29</p>
-              <p class="paragraphMain">Versão: 1.0</p>
+      <section class="soonLeft">
+        <div class="maskSoon">
+          <img src="/assets/img/Group 24.png" alt="" />
+        </div>
+        <div class="specification">
+          <p class="paragraphMain">Operador: Marialucia</p>
+          <p class="paragraphMain">Data - Hora 12/08/2022 - 15:29</p>
+          <p class="paragraphMain">Versão: 1.0</p>
+        </div>
+      </section>
+      <section class="requests" id="page1">
+        <h1>Novo Pedido</h1>
+        <h4 class="typeConsumo">Tipo de consumo</h4>
+        <div class="alertOff" id="boxAlert">
+          <p>POR FAVOR PREENCHA O CAMPO</p>
+        </div>
+        <div class="maskInput">
+          <input type="radio" name="tipoConsumo" id="tipoConsumo" value="Delivery" checked ><p class="paragraphMain">Delivery</p>
+          <input type="radio" name="tipoConsumo" id="tipoConsumo" value="Salão"><p class="paragraphMain">Salão</p>
+        </div>
+        <div class="search">
+          <div class="searchProduct">
+            <label class="paragraphMain labelSearch" >Buscar produto</label>
+            <input type="number" name="CodigoProduto"autocomplete="number"required placeholder="Código do produto" id="searchCode"class="searchCod inputMain"/>
           </div>
-        </section>
-        <section class="requests" id="page1">
-          <h1>Novo Pedido</h1>
-          <h4 class="titles">Tipo de consumo</h4>
-          <div class="alertOff" id="boxAlert">
-              <p>POR FAVOR PREENCHA O CAMPO</p>
+          <button type="button" class="searchBtn buttonMain">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <p>Buscar</p>
+          </button>
+        </div>
+        <div class="organization">
+          <label class="paragraphMain labelSearch">Quantidade</label>
+          <input type="number" class="quantity inputMain" placeholder="1" value="0" min = '1'/>
+      
+        
+          <label class="paragraphMain labelSearch">Produto</label>
+          <input type="text"class="productName inputMain disable" placeholder="Nome do produto" disabled/>
+
+          <label class="paragraphMain labelSearch">Preço</label>
+          <input type="text" class="price inputMain disable" placeholder="R$ 00,00" disabled/>  
+        
+        </div>
+        <div class="addProduct">
+        <button type="button" class="btnAdd buttonMain buttonDisable" disabled>
+          <img src="/assets/svg/plusSymbol.svg" alt="">
+          <p>Adicionar Produto</p>
+        </button>
+        </div>
+        <table id="productsSelected">
+          <tr>
+            <th class="codeTable">Código</th>
+            <th class="productTable">Produto</th>
+            <th class="quantityTable">Quantidade</th>
+            <th class="valueProductTable">Valor</th>
+          </tr>
+        </table>
+        <div class="totalRequest ocultSection">
+          <h2>TOTAL DO PEDIDO:</h2>
+          <h2 class="valueTotal"></h2>
+        </div>
+        <div class="buttonAlteration">
+          <input type="button" value="Cancelar" class="buttonMain cancelBtn" />
+          <button class="buttonMain  buttonDisable" id="buttonSave" disabled>Salvar Pedido</button>
+        </div>
+      </section>
+      <section class="requests ocultSection" id="page2">
+        <h1>Todos os pedidos</h1>
+        <button type="button" class="newOrder buttonMain">
+          <img src="/assets/svg/plusSymbol.svg" alt="">
+          <p>Novo pedido</p>
+        </button>
+        <p class="filterBy">Filtra por</p>
+        <div class="boxFilter">
+          <div class="filterBtn">
+            <select name="Tipo" placeholder="Tipo" class="selectMain filterbutton">
+              <option value="0">Delivery</option>
+              <option value="1">Salão</option>
+            </select>
+            <select name="Status" placeholder="Status" class="selectMain filterbutton">
+              <option value="0">Pronto</option>
+              <option value="1">Entregue</option>
+              <option value="2">Recebido</option>
+            </select>
           </div>
-          <div class="maskInput">
-            <input type="radio" name="tipoConsumo" id="tipoConsumo" value="delivery" checked ><p class="paragraphMain">Delivery</p>
-            <input type="radio" name="tipoConsumo" id="tipoConsumo" value="salao"><p class="paragraphMain">Salão</p>
-          </div>
-          <div class="search">
-            <div class="searchProduct">
-              <label class="paragraphMain labelSearch" >Buscar produto</label>
-              <input type="number" name="CodigoProduto"autocomplete="number"required placeholder="Código do produto" id="searchCode"class="searchCod inputMain"/>
-            </div>
-            <button type="button" class="searchBtn buttonMain">
-              <i class="fa-solid fa-magnifying-glass"></i>
-              <p>Buscar</p>
+          <div class="print">
+            <button class="buttonMain buttonDelet searchBtn ocultSection" id="removeItem">
+              <i class="fa-solid fa-trash-can"></i>
+              <p>Excluir</p>
+            </button>
+            <button type="button" value="Imprimir" class="buttonMain searchBtn buttonDelet"  onclick="print()"> 
+              <i class="fa-solid fa-print"></i>
+              <a href="">Imprimir</a>
             </button>
           </div>
-          <div class="organization">
-            <div>
-              <label class="paragraphMain labelSearch">Quantidade</label>
-              <input type="number" class="quantity inputMain" placeholder="1" value="0" min = '1'/>
-            </div>
-            <div class="widProductName">
-              <label class="paragraphMain labelSearch">Produto</label>
-              <input type="text"class="productName inputMain disable" placeholder="Nome do produto" disabled/>
-            </div>
-            <div class="widPrice">
-              <label class="paragraphMain labelSearch">Preço</p>
-              <input type="text" class="price inputMain disable" placeholder="R$ 00,00" disabled/>  
-            </div>
-          </div>
-          <div class="addProduct">
-            <button type="button" class="btnAdd buttonMain" disabled>
-              <img src="/assets/svg/plusSymbol.svg" alt="">
-              <p>Adicionar Produto</p>
-            </button>
-          </div>
-            <table id="productsSelected">
-              <tr>
-                <th class="codeTable">Código</th>
-                <th class="productTable">Produto</th>
-                <th class="quantityTable">Quantidade</th>
-                <th class="valueProductTable">Valor</th>
-              </tr>
-            </table>
-            <div class="totalRequest" hidden>
-              <h2>TOTAL DO PEDIDO:</h2>
-              <h2 class="valueTotal"></h2>
-            </div>
-          <div class="buttonAlteration">
-            <input type="button" value="Cancelar" class="buttonMain cancelBtn" />
-            <button src="/pages/allRequest/index.css" class="buttonMain saveBtn" id="saveBtn" disabled>Salvar Pedido</button>
-          </div>
-        </section>
-        <section class="requests ocultSection" id="page2">
-          <h1>Todos os pedidos</h1>
-            <button type="button" class="newOrder buttonMain">
-              <img src="/assets/svg/plusSymbol.svg" alt="">
-              <p>Novo pedido</p>
-            </button>
-           <p class="filterBy">Filtra por</p>
-           <div class="boxFilter">
-             <div class="filterBtn">
-               <select name="Tipo" placeholder="Tipo" class="selectMain filterbutton">
-                 <option value="0">Delivery</option>
-                 <option value="1">Salão</option>
-               </select>
-               <select name="Status" placeholder="Status" class="selectMain filterbutton">
-                 <option value="0">Pronto</option>
-                 <option value="1">Entregue</option>
-                 <option value="2">Recebido</option>
-               </select>
-             </div>
-             <div class="print">
-                <button class="buttonMain searchBtn" id="removeItem" >
-                  <i class="fa-solid fa-trash-can"></i>
-                  <p>Excluir</p>
-                </button>
-               <button type="button" value="Imprimir" class="buttonMain searchBtn ">
-                 <i class="fa-solid fa-print"></i>
-                 <p>Imprimir</p>
-               </button>
-             </div>
-           </div>
-           <table id="newRequestTable">
-            <tbody class="tBody">
-              <tr>
-                <th class="numberRequest"><input type="checkbox" id="checkAll" name="checkAll" class="checkBox">N° do pedido</input></th>
-                <th class="itemTable">Itens</th>
-                <th class="typeTable">Tipo</th>
-                <th class="valueTable">Valor</th>
-                <th class="statusTable">Status</th>
-              </tr>
-            </tbody>
-           </table>
-         </section>
-      </main>
-      <footer>
-        <div class="container">
-          <div class="finallyline">
-            Copyright @ 2022 easYcode - Todos os direitos reservados
-          </div>
-       </div>
-      </footer>
+        </div>
+        <table id="newRequestTable">
+          <tbody class="tBody">
+            <tr>
+              <th class="numberRequest">N° do pedido</input></th>
+              <th class="itemTable">Itens</th>
+              <th class="typeTable">Tipo</th>
+              <th class="valueTable">Valor</th>
+              <th class="statusTable">Status</th>
+            </tr>
+          </tbody>
+        </table>
+      </section>
     </div>
-  </body>
+    <footer>
+      <div class="finallyline">
+        Copyright @ 2022 easYcode - Todos os direitos reservados
+      </div>
+  </footer>
+    <script src="/index.js" type="module"></script>    
+</body>
 </html>
+    

@@ -1,9 +1,9 @@
 .inputMain{
-    width: 372px;
     height: 38px;
     border-radius:8px;
     padding:2px 5px 2px 16px;
-    color: var(--cor-principal-50);
+    color: var(--cor-texto-50);
+    border:var(--cor-texto-50);
     outline-style: none;
     font-size: 17px;
 }

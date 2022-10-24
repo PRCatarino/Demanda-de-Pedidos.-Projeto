@@ -2,7 +2,7 @@ import listProduct from '/assets/product.js'
 
 const buttonAdd = document.querySelector('.btnAdd');
 const alertWindow = document.getElementById('boxAlert');
-const buttonSave = document.getElementById('saveBtn');
+const buttonSave = document.getElementById('buttonSave');
 const selectedProductsTable= document.getElementById('productsSelected');
 const inputSearch = document.getElementById('searchCode');
 let quantity = document.querySelector('.quantity ').value
@@ -17,19 +17,19 @@ let valueRadio = null;
 let checkInput = false;
 let productFound = []
 
+
 function addEvent(){
-    document.querySelector('.searchBtn').addEventListener('click', preencherProdutoBusca);
-    document.querySelector('.quantity').addEventListener('change', calc);
+    document.querySelector('.searchBtn').addEventListener('click', fillSearch);
+    document.querySelector('.quantity').addEventListener('change', calcQuantity);
     document.querySelector('.btnAdd').addEventListener('click',  addProduct);
     document.querySelector('.newOrder').addEventListener('click',newRequest);
-    document.querySelector('#saveBtn').addEventListener('click',saveProductTable);
-    document.querySelector('#removeItem').addEventListener('click', excluir);
-    document.querySelector('.cancelBtn').addEventListener('click', cancelBtn);
-    document.getElementById('checkAll').addEventListener('change', test)
+    document.querySelector('#buttonSave').addEventListener('click', saveAllOrders);
+    document.querySelector('#removeItem').addEventListener('click', deletItem);
+    document.querySelector('.cancelBtn').addEventListener('click', cancel);
 }
 
 function alerta(){
-    inputSearch.classList.add('alertActive')
+    inputSearch.classList.add('alertInput')
     alertWindow.classList.remove('alertOff');
     alertWindow.classList.add('alertOn') 
 }
@@ -51,7 +51,7 @@ function searchProduct(codeProduct){
 }
 
 
-function preencherProdutoBusca(){
+function fillSearch(){
     document.querySelector('.btnAdd').removeAttribute('disabled');
     alertWindow.classList.remove('alertOn');
     alertWindow.classList.add('alertOff');
@@ -70,14 +70,15 @@ function preencherProdutoBusca(){
         
         productName.value= productFound.product;
         product = productFound
-        calc()
+        calcQuantity()
+       
         
     }else{
         alerta()
     }
     
 }
-function calc(){
+function calcQuantity(){
     if(checkInput){
         let calculatedPrice = productFound.price * quantity.value
         document.querySelector('.price').value = `R$ ${calculatedPrice},00`
@@ -86,9 +87,8 @@ function calc(){
 
 function addProduct(){
     const valor = document.querySelector('.price').value.replace('R$', '');
-    buttonSave.removeAttribute('disabled')
     document.querySelector('.totalRequest').removeAttribute('hidden');
-    buttonSave.classList.add('newOrder')
+    buttonSave.classList.add('saveBtn')
     arrProduct.push({ 
         code: document.getElementById('searchCode').value,
         quantity: document.querySelector('.quantity').value,
@@ -104,13 +104,18 @@ function addProduct(){
         <td class="valueProductTable priceTable">${arrProduct[contador].price}</td>
     </tr>
     `  
+
     contador++
-    
     sumTotal = arrProduct.reduce((total,atual)=>{
         return total + atual.total;
     },0);
+    
 
     document.querySelector('.valueTotal').innerHTML = `R$ ${sumTotal}, 00`
+    document.querySelector('.totalRequest').classList.remove('ocultSection');
+    document.getElementById('buttonSave').removeAttribute("disabled");
+    productName.value = ''
+    limparInput()
 }
 
 function gerarNumber(min, max) {
@@ -118,15 +123,17 @@ function gerarNumber(min, max) {
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-function cancelBtn(){
-    if(buttonCancel){
+function cancel(){
+    let allProducts = document.querySelector('.allProducts')
+    if(allProducts){
         document.getElementById('page1').classList.add('ocultSection');
         document.getElementById('page2').classList.remove('ocultSection');
     }
 }
-function saveProductTable(){
+function saveAllOrders(){
     valueRadio = document.querySelector('input[name="tipoConsumo"]:checked');
     valueRadio = valueRadio.value
+    let requestNumber = gerarNumber(1 , 90000)
     let product = ''
     
     let tableAllOrder = document.getElementById('newRequestTable');
@@ -134,10 +141,9 @@ function saveProductTable(){
         product += `${arrProduct[i].quantity} - ${arrProduct[i].product}</br>`;
     }
 
-    let requestNumber = gerarNumber(1 , 90000)
-  
     tableAllOrder.innerHTML +=`
-        <tr id="request${requestNumber}">
+    
+        <tr id="request${requestNumber}" class="allProducts">
             <td><input type="checkbox" value="${requestNumber}" id="requestItem" class="checkBox">${requestNumber}</td>
             <td>${product}</td>
             <td>${valueRadio}</td>
@@ -148,16 +154,20 @@ function saveProductTable(){
         
 
     groupNumberRandom.push(requestNumber)
-    ativaButtons()
+    groupNumberRandom.forEach(requestNumber => document.querySelector(`#changeReceived-${requestNumber}`).addEventListener('click', changeReceived))
     document.getElementById('page1').classList.add('ocultSection')
     document.getElementById('page2').classList.remove('ocultSection')
-    
+    document.querySelector('#requestItem').addEventListener('change',activeButtonDelet)
+    limparCampo()
+}
+function activeButtonDelet(){
+    let check = [...document.querySelectorAll('#requestItem:checked')]
+    if(check.length >= 1){
+        document.querySelector('#removeItem').classList.remove('ocultSection')
+    }else{
+        document.querySelector('#removeItem').classList.add('ocultSection')
+
     }
-    
-   
-function ativaButtons(){
-    
-    groupNumberRandom.forEach(requestNumber => document.querySelector(`#changeReceived-${requestNumber}`).addEventListener('click', changeReceived))
 }
 function changeReceived(){
     let classButton = this.classList[0];
@@ -184,7 +194,7 @@ function changeReceived(){
 function newRequest(){
     document.getElementById('page1').classList.remove('ocultSection');
     document.getElementById('page2').classList.add('ocultSection');
-   
+    buttonSave.setAttribute('disabled', 1)
     checkInput = false
     buttonCancel = true
     limparCampo()
@@ -202,33 +212,37 @@ function newRequest(){
     document.querySelector('.valueTotal').innerHTML = `R$ ${sumTotal},00`;
     document.querySelector('.totalRequest').setAttribute('hidden',1);
 }
-function limparCampo(){
-    buttonSave.setAttribute('disabled', '')
-    buttonSave.classList.remove('newOrder')
-    buttonAdd.setAttribute('disabled', '');
-    buttonAdd.classList.remove('activeButton')
+function limparInput(){
     document.querySelector('#searchCode').value = '';
     document.querySelector('.price ').value = 'R$ 0,00';
-    document.querySelector('.quantity ').value = 0
+    document.querySelector('.quantity ').value = 0;
+}
+function limparCampo(){
+    
+    limparInput()
+    buttonSave.classList.remove('saveBtn');
+    buttonAdd.setAttribute('disabled', '');
+    buttonAdd.classList.remove('activeButton') ;
+    document.querySelector('.totalRequest').classList.add('ocultSection');
     productName.value = '';
     contador = 0
     sumTotal = 0
     arrProduct = []
 }
 
-function excluir(){
+function deletItem(){
     groupNumberRandom = []
     const items = [...document.querySelectorAll('#requestItem:checked')]
-
+    
     const valores =  items.map((check)=>{
         return check.value
     })
     for(let i = 0; i < valores.length; i++){
-
+        
         document.querySelector(`#request${valores[i]}`).remove()
     }
+    let check = document.querySelector('#removeItem')
+    check.classList.add('ocultSection')
 }
-function test(){
-    console.log('oe')
-}
+
 addEvent()

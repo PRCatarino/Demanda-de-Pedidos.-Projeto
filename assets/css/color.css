@@ -1,33 +1,61 @@
 :root{
-    --cor-principal: 0, 0%;
-    --cor-secundaria:29, 100%;
-    --cor-tercearia:256, 100%;
 
-    --cor-principal-10: hsl(var(--cor-principal), 10%);
-    --cor-principal-20: hsl(var(--cor-principal), 20%);
-    --cor-principal-30: hsl(var(--cor-principal), 30%);
-    --cor-principal-40: hsl(var(--cor-principal), 40%);
-    --cor-principal-50: hsl(var(--cor-principal), 50%);
-    --cor-principal-60: hsl(var(--cor-principal), 60%);
-    --cor-principal-70: hsl(var(--cor-principal), 70%);
-    --cor-principal-90: hsl(var(--cor-principal), 90%);
+    --cor-primary:29, 100%;
+    --cor-texto:0, 0%;
+    --cor-cta:256, 100%;
   
-    --cor-secundaria-36: hsl(var(--cor-secundaria), 36%);
-    --cor-secundaria-46: hsl(var(--cor-secundaria), 46%);
-    --cor-secundaria-56: hsl(var(--cor-secundaria), 56%);
-    --cor-secundaria-66: hsl(var(--cor-secundaria), 66%);
-    --cor-secundaria-76: hsl(var(--cor-secundaria), 76%);
-    --cor-secundaria-96: hsl(var(--cor-secundaria), 96%);
+    --cor-primary-36: hsl(var(--cor-primary), 36%);
+    --cor-primary-46: hsl(var(--cor-primary), 46%);
+    --cor-primary-56: hsl(var(--cor-primary), 56%);
+    --cor-primary-66: hsl(var(--cor-primary), 66%);
+    --cor-primary-76: hsl(var(--cor-primary), 76%);
+    --cor-primary-86: hsl(var(--cor-primary), 86%);
+    --cor-primary-96: hsl(var(--cor-primary), 96%);
   
+    --cor-texto-20: hsl(var(--cor-texto), 20%);
+    --cor-texto-30: hsl(var(--cor-texto), 30%);
+    --cor-texto-40: hsl(var(--cor-texto), 40%);
+    --cor-texto-50: hsl(var(--cor-texto), 50%);
+    --cor-texto-60: hsl(var(--cor-texto), 60%);
+    --cor-texto-70: hsl(var(--cor-texto), 70%);
+    --cor-texto-80: hsl(var(--cor-texto), 80%);
+    --cor-texto-90: hsl(var(--cor-texto), 90%);
+    --cor-texto-95: hsl(var(--cor-texto), 95%);
   
-    --cor-tercearia-26: hsl(var(--cor-tercearia), 26%);
-    --cor-tercearia-32: hsl(var(--cor-tercearia), 32%);
-    --cor-tercearia-42: hsl(var(--cor-tercearia), 42%);
-    --cor-tercearia-52: hsl(var(--cor-tercearia), 52%);
-    --cor-tercearia-62: hsl(var(--cor-tercearia), 62%);
-    --cor-tercearia-72: hsl(var(--cor-tercearia), 72%);
-    --cor-tercearia-82: hsl(var(--cor-tercearia), 82%);
-    --cor-tercearia-92: hsl(var(--cor-tercearia), 92%);
+    --cor-cta-32: hsl(var(--cor-cta), 32%);
+    --cor-cta-42: hsl(var(--cor-cta), 42%);
+    --cor-cta-52: hsl(var(--cor-cta), 52%);
+    --cor-cta-62: hsl(var(--cor-cta), 62%);
+    --cor-cta-72: hsl(var(--cor-cta), 72%);
+    --cor-cta-92: hsl(var(--cor-cta), 92%);
 
+     /* status color */
+
+    --status-danger:4, 100%;
+    --status-success:133, 100%,
+    --status-alert:47, 100%;
+
+    --status-danger-26: hsl(var(--status-danger), 26%);
+    --status-danger-36: hsl(var(--status-danger), 36%);
+    --status-danger-46: hsl(var(--status-danger), 46%);
+    --status-danger-56: hsl(var(--status-danger), 56%);
+    --status-danger-66: hsl(var(--status-danger), 66%);
+    --status-danger-76: hsl(var(--status-danger), 76%);
+
+
+    --status-success-26: hsl(var(--status-success), 26%);
+    --status-success-36: hsl(var(--status-success), 36%);
+    --status-success-46: hsl(var(--status-success), 46%);
+    --status-success-56: hsl(var(--status-success), 56%);
+    --status-success-66: hsl(var(--status-success), 66%);
+    --status-success-76: hsl(var(--status-success), 76%);
+
+    
+    --status-alert-26: hsl(var(--status-alert), 26%);
+    --status-alert-36: hsl(var(--status-alert), 36%);
+    --status-alert-46: hsl(var(--status-alert), 46%);
+    --status-alert-56: hsl(var(--status-alert), 56%);
+    --status-alert-66: hsl(var(--status-alert), 66%);
+    --status-alert-76: hsl(var(--status-alert), 76%);
   }
 
